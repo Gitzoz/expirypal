@@ -1,0 +1,7 @@
+"dashboard.title" = "Dashboard";
+"dashboard.section.today" = "Today";
+"dashboard.section.next3days" = "Next 3 Days";
+"dashboard.section.later" = "Later";
+"dashboard.section.all_active" = "All Active";
+"dashboard.empty.title" = "No active items";
+"dashboard.empty.message" = "Add your first item to start tracking expiry dates.";

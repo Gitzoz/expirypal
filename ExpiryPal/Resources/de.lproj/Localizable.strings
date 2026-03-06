@@ -1,0 +1,7 @@
+"dashboard.title" = "Übersicht";
+"dashboard.section.today" = "Heute";
+"dashboard.section.next3days" = "Nächste 3 Tage";
+"dashboard.section.later" = "Später";
+"dashboard.section.all_active" = "Alle aktiven";
+"dashboard.empty.title" = "Keine aktiven Einträge";
+"dashboard.empty.message" = "Füge deinen ersten Eintrag hinzu, um Ablaufdaten zu verfolgen.";
