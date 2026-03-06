@@ -2,9 +2,12 @@ import SwiftUI
 
 struct DashboardView: View {
     @StateObject private var viewModel: DashboardViewModel
+    @State private var isPresentingAddItem = false
+    private let makeAddItemViewModel: () -> AddItemViewModel
 
-    init(viewModel: DashboardViewModel) {
+    init(viewModel: DashboardViewModel, makeAddItemViewModel: @escaping () -> AddItemViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.makeAddItemViewModel = makeAddItemViewModel
     }
 
     var body: some View {
@@ -28,8 +31,24 @@ struct DashboardView: View {
                 }
             }
             .navigationTitle("dashboard.title")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        isPresentingAddItem = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .accessibilityIdentifier("dashboard.addButton")
+                    .accessibilityLabel(Text("dashboard.action.add_item"))
+                }
+            }
             .onAppear {
                 viewModel.load()
+            }
+            .sheet(isPresented: $isPresentingAddItem, onDismiss: {
+                viewModel.load()
+            }) {
+                AddItemView(viewModel: makeAddItemViewModel())
             }
         }
     }

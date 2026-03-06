@@ -1,15 +1,42 @@
 import Foundation
+import SwiftData
 
-struct FoodItem: Identifiable {
-    let id: UUID
-    let name: String
-    let expiryDate: Date
-    let location: StorageLocation
-    let quantity: Double?
-    let note: String?
-    let status: ItemStatus
-    let createdAt: Date
-    let updatedAt: Date
+@Model
+final class FoodItem {
+    @Attribute(.unique) var id: UUID
+    private var nameRaw: String
+    var expiryDate: Date
+    var locationRaw: String
+    var quantity: Double?
+    var note: String?
+    var statusRaw: String
+    var createdAt: Date
+    var updatedAt: Date
+
+    var name: String {
+        get { nameRaw }
+        set { nameRaw = Self.normalizedName(newValue) }
+    }
+
+    var location: StorageLocation {
+        get {
+            guard let location = StorageLocation(rawValue: locationRaw) else {
+                preconditionFailure("Invalid storage location raw value: \(locationRaw)")
+            }
+            return location
+        }
+        set { locationRaw = newValue.rawValue }
+    }
+
+    var status: ItemStatus {
+        get {
+            guard let status = ItemStatus(rawValue: statusRaw) else {
+                preconditionFailure("Invalid item status raw value: \(statusRaw)")
+            }
+            return status
+        }
+        set { statusRaw = newValue.rawValue }
+    }
 
     init(
         id: UUID = UUID(),
@@ -22,17 +49,20 @@ struct FoodItem: Identifiable {
         createdAt: Date,
         updatedAt: Date
     ) {
-        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        precondition(!trimmedName.isEmpty, "FoodItem name must be non-empty after trimming")
-
         self.id = id
-        self.name = trimmedName
+        self.nameRaw = Self.normalizedName(name)
         self.expiryDate = expiryDate
-        self.location = location
+        self.locationRaw = location.rawValue
         self.quantity = quantity
         self.note = note
-        self.status = status
+        self.statusRaw = status.rawValue
         self.createdAt = createdAt
         self.updatedAt = updatedAt
+    }
+
+    private static func normalizedName(_ value: String) -> String {
+        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        precondition(!trimmed.isEmpty, "FoodItem name must be trimmed and non-empty")
+        return trimmed
     }
 }

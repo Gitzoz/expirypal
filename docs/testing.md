@@ -8,3 +8,9 @@ Use XCTest only.
 - Active-item filtering
 - Ascending sort by expiryDate
 - German localization scenario with no English fallback on dashboard UI
+
+## Add Item Coverage
+- Validation for trimmed non-empty name
+- Repository create/query behavior with SwiftData
+- ViewModel save success and validation failure
+- UI flow for adding an item and seeing it on Dashboard

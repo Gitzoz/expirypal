@@ -13,8 +13,23 @@ final class LocalizationParityTests: XCTestCase {
             "dashboard.section.next3days",
             "dashboard.section.later",
             "dashboard.section.all_active",
+            "dashboard.action.add_item",
             "dashboard.empty.title",
-            "dashboard.empty.message"
+            "dashboard.empty.message",
+            "addItem.title",
+            "addItem.action.cancel",
+            "addItem.action.save",
+            "addItem.field.name",
+            "addItem.field.expiryDate",
+            "addItem.field.location",
+            "addItem.field.quantity",
+            "addItem.field.note",
+            "addItem.validation.nameRequired",
+            "addItem.validation.quantityInvalid",
+            "addItem.validation.generic",
+            "location.fridge",
+            "location.freezer",
+            "location.pantry"
         ]
 
         for key in required {
