@@ -74,6 +74,25 @@ final class NotificationSchedulingServiceTests: XCTestCase {
         XCTAssertTrue(center.addedRequests.isEmpty)
     }
 
+    func testNoOpNotificationServiceAcceptsAllCalls() {
+        let service = NoOpNotificationSchedulingService()
+        let now = makeDate(year: 2026, month: 3, day: 6, hour: 9)
+        let item = FoodItem(
+            name: "Bread",
+            expiryDate: makeDate(year: 2026, month: 3, day: 8, hour: 9),
+            location: .pantry,
+            quantity: nil,
+            note: nil,
+            createdAt: now,
+            updatedAt: now
+        )
+        let settings = AppSettings()
+
+        service.syncNotifications(for: item, settings: settings)
+        service.syncNotifications(for: [item], settings: settings)
+        service.cancelNotifications(for: item.id)
+    }
+
     private func makeDate(year: Int, month: Int, day: Int, hour: Int) -> Date {
         var comps = DateComponents()
         comps.year = year

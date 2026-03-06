@@ -29,6 +29,11 @@ Use XCTest only.
 - Notification cancel/reschedule rules for settings changes and status changes
 - UI flow for changing notification settings
 
+## Coverage Focus
+- Business-logic coverage is tracked primarily across `Data`, `Services`, `ViewModels`, and `Utilities`.
+- Release-preparation coverage work should prefer targeted branch tests for persistence updates, status transitions, scheduling rules, and no-op service behavior over adding new scope.
+- The 80% target applies to business-logic layers rather than SwiftUI view rendering internals.
+
 ## Pages Validation
 
 The public GitHub Pages site is validated with deterministic repository checks rather than browser automation.

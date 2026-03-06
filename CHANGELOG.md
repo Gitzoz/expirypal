@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- Hardened business-logic coverage across settings persistence, archive loading, dashboard status transitions, edit validation, and no-op notification service behavior.
+- Added release-preparation test coverage for the app-target in-memory repository used by previews and UI-test mode.
 - Added Edit Item, Archive, Settings, and local notification scheduling documentation.
 - Added `AppSettings` persistence with an enforced single-record repository boundary.
 - Added Edit Item, Archive, and Settings screens with MVVM + Repository + Services wiring.

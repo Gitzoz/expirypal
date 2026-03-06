@@ -184,6 +184,66 @@ final class FoodItemRepositoryTests: XCTestCase {
         XCTAssertNil(item.quantity)
     }
 
+    func testAppInMemoryRepositorySupportsArchiveAndLookupFlows() throws {
+        let now = makeDate(year: 2026, month: 3, day: 6, hour: 9)
+        let archived = FoodItem(
+            name: "Soup",
+            expiryDate: makeDate(year: 2026, month: 3, day: 5, hour: 9),
+            location: .pantry,
+            quantity: nil,
+            note: nil,
+            status: .discarded,
+            createdAt: now,
+            updatedAt: makeDate(year: 2026, month: 3, day: 6, hour: 10)
+        )
+        let active = FoodItem(
+            name: "Milk",
+            expiryDate: makeDate(year: 2026, month: 3, day: 7, hour: 9),
+            location: .fridge,
+            quantity: nil,
+            note: nil,
+            createdAt: now,
+            updatedAt: now
+        )
+        let repository = ExpiryPal.InMemoryFoodItemRepository(items: [active, archived], clock: TestClock(now: now))
+
+        let archivedItems = try repository.fetchArchivedItemsSortedByUpdatedAtDescending()
+        let fetchedItem = try repository.fetchItem(id: active.id)
+
+        XCTAssertEqual(archivedItems.map(\.name), ["Soup"])
+        XCTAssertEqual(fetchedItem?.id, active.id)
+    }
+
+    func testAppInMemoryRepositoryRejectsInvalidOperations() {
+        let now = makeDate(year: 2026, month: 3, day: 6, hour: 9)
+        let repository = ExpiryPal.InMemoryFoodItemRepository(items: [], clock: TestClock(now: now))
+
+        XCTAssertThrowsError(
+            try repository.addItem(
+                name: "   ",
+                expiryDate: makeDate(year: 2026, month: 3, day: 7, hour: 9),
+                location: .fridge,
+                quantity: nil,
+                note: nil
+            )
+        )
+
+        XCTAssertThrowsError(
+            try repository.updateItem(
+                id: UUID(),
+                name: "Milk",
+                expiryDate: makeDate(year: 2026, month: 3, day: 7, hour: 9),
+                location: .fridge,
+                quantity: nil,
+                note: nil
+            )
+        )
+
+        XCTAssertThrowsError(
+            try repository.updateStatus(id: UUID(), status: .consumed)
+        )
+    }
+
     private func makeContainer() throws -> ModelContainer {
         try ModelContainer(
             for: FoodItem.self,

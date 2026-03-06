@@ -75,6 +75,66 @@ final class DashboardSegmentationTests: XCTestCase {
         XCTAssertEqual(viewModel.allActiveItems.map(\.name), ["A", "B"])
     }
 
+    func testMarkConsumedCancelsNotificationsAndReloadsArchiveState() {
+        let now = makeDate(year: 2026, month: 3, day: 5, hour: 9)
+        let clock = TestClock(now: now)
+        let item = makeItem(name: "Milk", expiryDate: makeDate(year: 2026, month: 3, day: 6, hour: 9))
+        let notificationSpy = NotificationSchedulingServiceSpy()
+        let viewModel = DashboardViewModel(
+            repository: InMemoryFoodItemRepository(items: [item], clock: clock),
+            settingsRepository: InMemoryAppSettingsRepository(),
+            notificationService: notificationSpy,
+            clock: clock,
+            calendar: calendar
+        )
+
+        viewModel.load()
+        viewModel.markConsumed(id: item.id)
+
+        XCTAssertTrue(viewModel.allActiveItems.isEmpty)
+        XCTAssertEqual(notificationSpy.cancelledItemIDs, [item.id])
+    }
+
+    func testArchiveViewModelLoadsArchivedItemsSortedByUpdatedAtDescending() {
+        let earlier = makeDate(year: 2026, month: 3, day: 5, hour: 9)
+        let later = makeDate(year: 2026, month: 3, day: 6, hour: 9)
+        let items = [
+            FoodItem(
+                name: "Discarded Soup",
+                expiryDate: later,
+                location: .pantry,
+                quantity: nil,
+                note: nil,
+                status: .discarded,
+                createdAt: earlier,
+                updatedAt: later
+            ),
+            FoodItem(
+                name: "Consumed Milk",
+                expiryDate: earlier,
+                location: .fridge,
+                quantity: nil,
+                note: nil,
+                status: .consumed,
+                createdAt: earlier,
+                updatedAt: earlier
+            )
+        ]
+        let viewModel = ArchiveViewModel(repository: InMemoryFoodItemRepository(items: items, clock: TestClock(now: later)))
+
+        viewModel.load()
+
+        XCTAssertEqual(viewModel.archivedItems.map(\.name), ["Discarded Soup", "Consumed Milk"])
+    }
+
+    func testArchiveViewModelClearsItemsOnRepositoryFailure() {
+        let viewModel = ArchiveViewModel(repository: FailingFoodItemRepository())
+
+        viewModel.load()
+
+        XCTAssertTrue(viewModel.archivedItems.isEmpty)
+    }
+
     private func makeDate(year: Int, month: Int, day: Int, hour: Int) -> Date {
         var comps = DateComponents()
         comps.year = year
@@ -100,4 +160,14 @@ final class DashboardSegmentationTests: XCTestCase {
             updatedAt: expiryDate
         )
     }
+}
+
+@MainActor
+private final class FailingFoodItemRepository: FoodItemRepository {
+    func fetchActiveItemsSortedByExpiryDate() throws -> [FoodItem] { throw FoodItemRepositoryError.itemNotFound }
+    func fetchArchivedItemsSortedByUpdatedAtDescending() throws -> [FoodItem] { throw FoodItemRepositoryError.itemNotFound }
+    func fetchItem(id: UUID) throws -> FoodItem? { throw FoodItemRepositoryError.itemNotFound }
+    func addItem(name: String, expiryDate: Date, location: StorageLocation, quantity: Double?, note: String?) throws -> FoodItem { throw FoodItemRepositoryError.itemNotFound }
+    func updateItem(id: UUID, name: String, expiryDate: Date, location: StorageLocation, quantity: Double?, note: String?) throws -> FoodItem { throw FoodItemRepositoryError.itemNotFound }
+    func updateStatus(id: UUID, status: ItemStatus) throws -> FoodItem { throw FoodItemRepositoryError.itemNotFound }
 }

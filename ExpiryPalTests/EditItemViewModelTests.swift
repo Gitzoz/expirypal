@@ -86,6 +86,57 @@ final class EditItemViewModelTests: XCTestCase {
         XCTAssertEqual(notificationSpy.cancelledItemIDs, [item.id])
     }
 
+    func testSaveRejectsInvalidQuantity() {
+        let clock = TestClock(now: makeDate(year: 2026, month: 3, day: 6, hour: 9))
+        let item = FoodItem(
+            name: "Milk",
+            expiryDate: makeDate(year: 2026, month: 3, day: 7, hour: 9),
+            location: .fridge,
+            quantity: nil,
+            note: nil,
+            createdAt: clock.now,
+            updatedAt: clock.now
+        )
+        let viewModel = EditItemViewModel(
+            item: item,
+            repository: InMemoryFoodItemRepository(items: [item], clock: clock),
+            settingsRepository: InMemoryAppSettingsRepository(),
+            notificationService: NotificationSchedulingServiceSpy()
+        )
+
+        viewModel.quantityText = "abc"
+        viewModel.save()
+
+        XCTAssertEqual(viewModel.validationMessageKey, "editItem.validation.quantityInvalid")
+        XCTAssertFalse(viewModel.didSave)
+    }
+
+    func testMarkDiscardedCancelsNotificationsAndCompletesArchiveFlow() {
+        let clock = TestClock(now: makeDate(year: 2026, month: 3, day: 6, hour: 9))
+        let item = FoodItem(
+            name: "Soup",
+            expiryDate: makeDate(year: 2026, month: 3, day: 8, hour: 9),
+            location: .pantry,
+            quantity: nil,
+            note: nil,
+            createdAt: clock.now,
+            updatedAt: clock.now
+        )
+        let notificationSpy = NotificationSchedulingServiceSpy()
+        let viewModel = EditItemViewModel(
+            item: item,
+            repository: InMemoryFoodItemRepository(items: [item], clock: clock),
+            settingsRepository: InMemoryAppSettingsRepository(),
+            notificationService: notificationSpy
+        )
+
+        viewModel.markDiscarded()
+
+        XCTAssertTrue(viewModel.didArchive)
+        XCTAssertEqual(item.status, .discarded)
+        XCTAssertEqual(notificationSpy.cancelledItemIDs, [item.id])
+    }
+
     private func makeDate(year: Int, month: Int, day: Int, hour: Int) -> Date {
         var comps = DateComponents()
         comps.year = year
