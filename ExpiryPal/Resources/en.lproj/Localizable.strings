@@ -1,11 +1,24 @@
+"tab.dashboard" = "Dashboard";
+"tab.archive" = "Archive";
+"tab.settings" = "Settings";
+
 "dashboard.title" = "Dashboard";
 "dashboard.section.today" = "Today";
 "dashboard.section.next3days" = "Next 3 Days";
 "dashboard.section.later" = "Later";
 "dashboard.section.all_active" = "All Active";
 "dashboard.action.add_item" = "Add Item";
+"dashboard.action.consume" = "Consume";
+"dashboard.action.discard" = "Discard";
 "dashboard.empty.title" = "No active items";
 "dashboard.empty.message" = "Add your first item to start tracking expiry dates.";
+
+"archive.title" = "Archive";
+"archive.empty.title" = "No archived items";
+"archive.empty.message" = "Consumed and discarded items will appear here.";
+"archive.status.consumed" = "Consumed";
+"archive.status.discarded" = "Discarded";
+
 "addItem.title" = "Add Item";
 "addItem.action.cancel" = "Cancel";
 "addItem.action.save" = "Save";
@@ -17,6 +30,39 @@
 "addItem.validation.nameRequired" = "Enter a name.";
 "addItem.validation.quantityInvalid" = "Enter a valid quantity or leave it empty.";
 "addItem.validation.generic" = "The item could not be saved.";
+
+"editItem.title" = "Edit Item";
+"editItem.action.cancel" = "Cancel";
+"editItem.action.save" = "Save";
+"editItem.action.markConsumed" = "Mark Consumed";
+"editItem.action.markDiscarded" = "Mark Discarded";
+"editItem.field.name" = "Name";
+"editItem.field.expiryDate" = "Expiry Date";
+"editItem.field.location" = "Location";
+"editItem.field.quantity" = "Quantity";
+"editItem.field.note" = "Note";
+"editItem.section.status" = "Status";
+"editItem.validation.nameRequired" = "Enter a name.";
+"editItem.validation.quantityInvalid" = "Enter a valid quantity or leave it empty.";
+"editItem.validation.generic" = "The item could not be updated.";
+
+"settings.title" = "Settings";
+"settings.section.notifications" = "Notifications";
+"settings.action.save" = "Save";
+"settings.field.notificationsEnabled" = "Enable notifications";
+"settings.field.notifyDaysBefore" = "Notify %d days before expiry";
+"settings.field.notifyOneDayBefore" = "Notify 1 day before expiry";
+"settings.field.notifyOnDay" = "Notify on expiry day";
+"settings.field.notificationTime" = "Notification time";
+"settings.validation.generic" = "Settings could not be saved.";
+
 "location.fridge" = "Fridge";
 "location.freezer" = "Freezer";
 "location.pantry" = "Pantry";
+
+"notification.title.future" = "Expiry reminder";
+"notification.title.tomorrow" = "Expiry reminder";
+"notification.title.today" = "Expiry reminder";
+"notification.body.future" = "%@ expires in %d days.";
+"notification.body.tomorrow" = "%@ expires tomorrow.";
+"notification.body.today" = "%@ expires today.";

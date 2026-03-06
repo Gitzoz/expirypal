@@ -11,9 +11,12 @@ struct ExpiryPalApp: App {
 
     var body: some Scene {
         WindowGroup {
-            DashboardView(
-                viewModel: container.dashboardViewModel,
-                makeAddItemViewModel: container.makeAddItemViewModel
+            RootTabView(
+                dashboardViewModel: container.dashboardViewModel,
+                archiveViewModel: container.archiveViewModel,
+                settingsViewModel: container.settingsViewModel,
+                makeAddItemViewModel: container.makeAddItemViewModel,
+                makeEditItemViewModel: container.makeEditItemViewModel
             )
         }
     }

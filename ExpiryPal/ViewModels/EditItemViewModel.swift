@@ -2,49 +2,55 @@ import Combine
 import Foundation
 
 @MainActor
-final class AddItemViewModel: ObservableObject {
-    @Published var name = ""
+final class EditItemViewModel: ObservableObject {
+    @Published var name: String
     @Published var expiryDate: Date
-    @Published var location: StorageLocation = .fridge
-    @Published var quantityText = ""
-    @Published var note = ""
+    @Published var location: StorageLocation
+    @Published var quantityText: String
+    @Published var note: String
     @Published private(set) var validationMessageKey: String?
     @Published private(set) var didSave = false
+    @Published private(set) var didArchive = false
 
+    let itemID: UUID
     private let repository: FoodItemRepository
     private let settingsRepository: AppSettingsRepository
     private let notificationService: NotificationSchedulingService
 
     init(
+        item: FoodItem,
         repository: FoodItemRepository,
         settingsRepository: AppSettingsRepository,
-        notificationService: NotificationSchedulingService,
-        clock: Clock,
-        calendar: Calendar = .current
+        notificationService: NotificationSchedulingService
     ) {
+        self.itemID = item.id
+        self.name = item.name
+        self.expiryDate = item.expiryDate
+        self.location = item.location
+        self.quantityText = item.quantity.map { String($0) } ?? ""
+        self.note = item.note ?? ""
         self.repository = repository
         self.settingsRepository = settingsRepository
         self.notificationService = notificationService
-        self.expiryDate = calendar.startOfDay(for: clock.now)
     }
 
     func save() {
         didSave = false
+        didArchive = false
 
         let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedName.isEmpty else {
-            validationMessageKey = "addItem.validation.nameRequired"
+            validationMessageKey = "editItem.validation.nameRequired"
             return
         }
 
-        let parsedQuantityResult = parsedQuantity()
-        switch parsedQuantityResult {
+        switch parsedQuantity() {
         case .failure:
-            validationMessageKey = "addItem.validation.quantityInvalid"
-            return
+            validationMessageKey = "editItem.validation.quantityInvalid"
         case .success(let quantity):
             do {
-                let item = try repository.addItem(
+                let item = try repository.updateItem(
+                    id: itemID,
                     name: trimmedName,
                     expiryDate: expiryDate,
                     location: location,
@@ -58,13 +64,32 @@ final class AddItemViewModel: ObservableObject {
             } catch let error as FoodItemRepositoryError {
                 switch error {
                 case .invalidName:
-                    validationMessageKey = "addItem.validation.nameRequired"
+                    validationMessageKey = "editItem.validation.nameRequired"
                 case .itemNotFound:
-                    validationMessageKey = "addItem.validation.generic"
+                    validationMessageKey = "editItem.validation.generic"
                 }
             } catch {
-                validationMessageKey = "addItem.validation.generic"
+                validationMessageKey = "editItem.validation.generic"
             }
+        }
+    }
+
+    func markConsumed() {
+        updateStatus(.consumed)
+    }
+
+    func markDiscarded() {
+        updateStatus(.discarded)
+    }
+
+    private func updateStatus(_ status: ItemStatus) {
+        do {
+            _ = try repository.updateStatus(id: itemID, status: status)
+            notificationService.cancelNotifications(for: itemID)
+            validationMessageKey = nil
+            didArchive = true
+        } catch {
+            validationMessageKey = "editItem.validation.generic"
         }
     }
 

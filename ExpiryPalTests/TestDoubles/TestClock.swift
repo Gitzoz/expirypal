@@ -1,6 +1,10 @@
 import Foundation
 @testable import ExpiryPal
 
-struct TestClock: Clock {
-    let now: Date
+final class TestClock: Clock {
+    var now: Date
+
+    init(now: Date) {
+        self.now = now
+    }
 }

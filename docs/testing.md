@@ -15,6 +15,20 @@ Use XCTest only.
 - ViewModel save success and validation failure
 - UI flow for adding an item and seeing it on Dashboard
 
+## Edit and Archive Coverage
+- Validation for editing existing items
+- Repository update and status transition behavior
+- Active/archive query separation
+- UI flow for editing an item from Dashboard
+- UI flow for marking an item consumed or discarded and seeing it move to Archive
+
+## Settings and Notification Coverage
+- Exactly-one `AppSettings` repository behavior
+- Settings ViewModel default loading and persistence
+- Notification scheduling identifiers and trigger dates
+- Notification cancel/reschedule rules for settings changes and status changes
+- UI flow for changing notification settings
+
 ## Pages Validation
 
 The public GitHub Pages site is validated with deterministic repository checks rather than browser automation.

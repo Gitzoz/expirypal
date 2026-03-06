@@ -10,8 +10,14 @@ final class DashboardSegmentationTests: XCTestCase {
         let now = makeDate(year: 2026, month: 3, day: 5, hour: 9)
         let clock = TestClock(now: now)
         let overdue = makeItem(name: "Milk", expiryDate: makeDate(year: 2026, month: 3, day: 4, hour: 20))
-        let repository = InMemoryFoodItemRepository(items: [overdue])
-        let viewModel = DashboardViewModel(repository: repository, clock: clock, calendar: calendar)
+        let repository = InMemoryFoodItemRepository(items: [overdue], clock: clock)
+        let viewModel = DashboardViewModel(
+            repository: repository,
+            settingsRepository: InMemoryAppSettingsRepository(),
+            notificationService: NotificationSchedulingServiceSpy(),
+            clock: clock,
+            calendar: calendar
+        )
 
         viewModel.load()
 
@@ -33,7 +39,9 @@ final class DashboardSegmentationTests: XCTestCase {
         ]
 
         let viewModel = DashboardViewModel(
-            repository: InMemoryFoodItemRepository(items: items),
+            repository: InMemoryFoodItemRepository(items: items, clock: TestClock(now: now)),
+            settingsRepository: InMemoryAppSettingsRepository(),
+            notificationService: NotificationSchedulingServiceSpy(),
             clock: TestClock(now: now),
             calendar: calendar
         )
@@ -47,6 +55,7 @@ final class DashboardSegmentationTests: XCTestCase {
 
     func testOnlyActiveItemsAppearAndAreSortedAscending() throws {
         let now = makeDate(year: 2026, month: 3, day: 5, hour: 9)
+        let clock = TestClock(now: now)
         let items = [
             makeItem(name: "B", expiryDate: makeDate(year: 2026, month: 3, day: 8, hour: 9), status: .active),
             makeItem(name: "Discarded", expiryDate: makeDate(year: 2026, month: 3, day: 6, hour: 9), status: .discarded),
@@ -54,8 +63,10 @@ final class DashboardSegmentationTests: XCTestCase {
         ]
 
         let viewModel = DashboardViewModel(
-            repository: InMemoryFoodItemRepository(items: items),
-            clock: TestClock(now: now),
+            repository: InMemoryFoodItemRepository(items: items, clock: clock),
+            settingsRepository: InMemoryAppSettingsRepository(),
+            notificationService: NotificationSchedulingServiceSpy(),
+            clock: clock,
             calendar: calendar
         )
 

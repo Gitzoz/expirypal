@@ -3,7 +3,7 @@ import XCTest
 final class AddItemUITests: XCTestCase {
     func testAddItemCreatesDashboardRow() {
         let app = XCUIApplication()
-        app.launchArguments += ["UITEST_MODE"]
+        app.launchArguments += ["UITEST_MODE", "-AppleLanguages", "(en)", "-AppleLocale", "en_US"]
         app.launch()
 
         let addButton = app.buttons["dashboard.addButton"]

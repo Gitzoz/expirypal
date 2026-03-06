@@ -1,5 +1,5 @@
-import Foundation
 import Combine
+import Foundation
 
 @MainActor
 final class DashboardViewModel: ObservableObject {
@@ -9,11 +9,21 @@ final class DashboardViewModel: ObservableObject {
     @Published private(set) var laterItems: [FoodItem] = []
 
     private let repository: FoodItemRepository
+    private let settingsRepository: AppSettingsRepository
+    private let notificationService: NotificationSchedulingService
     private let clock: Clock
     private let calendar: Calendar
 
-    init(repository: FoodItemRepository, clock: Clock, calendar: Calendar = .current) {
+    init(
+        repository: FoodItemRepository,
+        settingsRepository: AppSettingsRepository,
+        notificationService: NotificationSchedulingService,
+        clock: Clock,
+        calendar: Calendar = .current
+    ) {
         self.repository = repository
+        self.settingsRepository = settingsRepository
+        self.notificationService = notificationService
         self.clock = clock
         self.calendar = calendar
     }
@@ -31,6 +41,25 @@ final class DashboardViewModel: ObservableObject {
             todayItems = []
             next3DaysItems = []
             laterItems = []
+        }
+    }
+
+    func markConsumed(id: UUID) {
+        updateStatus(id: id, status: .consumed)
+    }
+
+    func markDiscarded(id: UUID) {
+        updateStatus(id: id, status: .discarded)
+    }
+
+    private func updateStatus(id: UUID, status: ItemStatus) {
+        do {
+            _ = try repository.updateStatus(id: id, status: status)
+            notificationService.cancelNotifications(for: id)
+            _ = try settingsRepository.loadSettings()
+            load()
+        } catch {
+            load()
         }
     }
 

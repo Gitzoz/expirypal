@@ -59,6 +59,93 @@ final class FoodItemRepositoryTests: XCTestCase {
         XCTAssertTrue(items.isEmpty)
     }
 
+    func testFetchArchivedItemsIncludesOnlyNonActiveStatuses() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let repository = SwiftDataFoodItemRepository(
+            modelContext: context,
+            clock: TestClock(now: makeDate(year: 2026, month: 3, day: 6, hour: 9))
+        )
+
+        context.insert(
+            FoodItem(
+                name: "Discarded Soup",
+                expiryDate: makeDate(year: 2026, month: 3, day: 7, hour: 9),
+                location: .pantry,
+                quantity: nil,
+                note: nil,
+                status: .discarded,
+                createdAt: makeDate(year: 2026, month: 3, day: 6, hour: 9),
+                updatedAt: makeDate(year: 2026, month: 3, day: 7, hour: 9)
+            )
+        )
+        context.insert(
+            FoodItem(
+                name: "Active Milk",
+                expiryDate: makeDate(year: 2026, month: 3, day: 8, hour: 9),
+                location: .fridge,
+                quantity: nil,
+                note: nil,
+                status: .active,
+                createdAt: makeDate(year: 2026, month: 3, day: 6, hour: 9),
+                updatedAt: makeDate(year: 2026, month: 3, day: 6, hour: 9)
+            )
+        )
+        try context.save()
+
+        let items = try repository.fetchArchivedItemsSortedByUpdatedAtDescending()
+
+        XCTAssertEqual(items.map(\.name), ["Discarded Soup"])
+    }
+
+    func testUpdateItemChangesFieldsAndUpdatedAt() throws {
+        let clock = TestClock(now: makeDate(year: 2026, month: 3, day: 6, hour: 9))
+        let container = try makeContainer()
+        let repository = SwiftDataFoodItemRepository(modelContext: container.mainContext, clock: clock)
+        let item = try repository.addItem(
+            name: "Milk",
+            expiryDate: makeDate(year: 2026, month: 3, day: 7, hour: 9),
+            location: .fridge,
+            quantity: nil,
+            note: nil
+        )
+        clock.now = makeDate(year: 2026, month: 3, day: 6, hour: 12)
+
+        let updated = try repository.updateItem(
+            id: item.id,
+            name: "Yogurt",
+            expiryDate: makeDate(year: 2026, month: 3, day: 8, hour: 9),
+            location: .pantry,
+            quantity: 2,
+            note: "Breakfast"
+        )
+
+        XCTAssertEqual(updated.name, "Yogurt")
+        XCTAssertEqual(updated.location, .pantry)
+        XCTAssertEqual(updated.quantity, 2)
+        XCTAssertEqual(updated.updatedAt, clock.now)
+    }
+
+    func testUpdateStatusMovesItemOutOfActiveQueries() throws {
+        let container = try makeContainer()
+        let repository = SwiftDataFoodItemRepository(
+            modelContext: container.mainContext,
+            clock: TestClock(now: makeDate(year: 2026, month: 3, day: 6, hour: 9))
+        )
+        let item = try repository.addItem(
+            name: "Milk",
+            expiryDate: makeDate(year: 2026, month: 3, day: 7, hour: 9),
+            location: .fridge,
+            quantity: nil,
+            note: nil
+        )
+
+        _ = try repository.updateStatus(id: item.id, status: .consumed)
+
+        XCTAssertTrue(try repository.fetchActiveItemsSortedByExpiryDate().isEmpty)
+        XCTAssertEqual(try repository.fetchArchivedItemsSortedByUpdatedAtDescending().map(\.name), ["Milk"])
+    }
+
     func testAddItemRejectsBlankTrimmedName() throws {
         let container = try makeContainer()
         let repository = SwiftDataFoodItemRepository(

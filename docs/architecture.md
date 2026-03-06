@@ -15,7 +15,12 @@ Rules:
 ## Current Composition
 
 - `FoodItem` is persisted with SwiftData.
-- `SwiftDataFoodItemRepository` owns create/query persistence logic for items.
+- `AppSettings` is persisted with SwiftData and accessed through a dedicated settings repository.
+- `SwiftDataFoodItemRepository` owns item create, update, archive, and query persistence logic.
+- `SwiftDataAppSettingsRepository` owns the exactly-one settings record contract.
 - `DashboardViewModel` reads active items from the repository and applies date segmentation with the injected `Clock`.
-- `AddItemViewModel` owns form validation and save orchestration through the repository.
-- `ExpiryPalApp` builds the composition root and injects dependencies through `AppContainer`.
+- `AddItemViewModel` and `EditItemViewModel` own item-form validation and persistence orchestration through repositories.
+- `ArchiveViewModel` reads non-active items from the repository.
+- `SettingsViewModel` loads and saves notification preferences through the settings repository.
+- `NotificationSchedulingService` wraps `UserNotifications` and is invoked by ViewModels after item or settings changes.
+- `ExpiryPalApp` builds the composition root and injects repositories, services, and `Clock` through `AppContainer`.
