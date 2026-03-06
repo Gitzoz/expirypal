@@ -1,4 +1,5 @@
 import XCTest
+@testable import ExpiryPal
 
 final class LocalizationParityTests: XCTestCase {
     func testDashboardKeysExistInEnglishAndGerman() throws {
@@ -82,5 +83,25 @@ final class LocalizationParityTests: XCTestCase {
             .appendingPathComponent("ExpiryPal/Resources/\(languageCode).lproj/Localizable.strings")
 
         return NSDictionary(contentsOf: url) as? [String: String] ?? [:]
+    }
+
+    func testScreenshotModeUsesInMemoryStoreAndParsesScene() {
+        let configuration = AppLaunchConfiguration.from(
+            arguments: ["ExpiryPal", "SCREENSHOT_MODE", "SCREENSHOT_SCENE=editItem"]
+        )
+
+        XCTAssertFalse(configuration.isUITesting)
+        XCTAssertEqual(configuration.screenshotScene, .editItem)
+        XCTAssertTrue(configuration.usesInMemoryStore)
+    }
+
+    func testUITestModeUsesInMemoryStoreWithoutScreenshotScene() {
+        let configuration = AppLaunchConfiguration.from(
+            arguments: ["ExpiryPal", "UITEST_MODE"]
+        )
+
+        XCTAssertTrue(configuration.isUITesting)
+        XCTAssertNil(configuration.screenshotScene)
+        XCTAssertTrue(configuration.usesInMemoryStore)
     }
 }

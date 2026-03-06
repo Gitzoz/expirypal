@@ -1,0 +1,58 @@
+{
+  "entries": [
+    {
+      "order": 1,
+      "scene": "dashboard",
+      "language": "en",
+      "headline": "Track food before it expires",
+      "subheadline": "See what needs attention today, in the next three days, and later.",
+      "cropTopRatio": 0.02,
+      "cropHeightRatio": 0.78
+    },
+    {
+      "order": 2,
+      "scene": "addItem",
+      "language": "en",
+      "headline": "Add items in seconds",
+      "subheadline": "Save a food name, expiry date, and location with a lightweight form.",
+      "cropTopRatio": 0.02,
+      "cropHeightRatio": 0.46
+    },
+    {
+      "order": 3,
+      "scene": "editItem",
+      "language": "en",
+      "headline": "Update dates and status fast",
+      "subheadline": "Edit expiry details or move finished items out of your active list.",
+      "cropTopRatio": 0.02,
+      "cropHeightRatio": 0.50
+    },
+    {
+      "order": 4,
+      "scene": "archive",
+      "language": "en",
+      "headline": "Keep consumed items organized",
+      "subheadline": "Archive consumed and discarded food without cluttering the dashboard.",
+      "cropTopRatio": 0.02,
+      "cropHeightRatio": 0.42
+    },
+    {
+      "order": 5,
+      "scene": "settings",
+      "language": "en",
+      "headline": "Local reminders. No tracking.",
+      "subheadline": "Configure expiry notifications while keeping your data on device.",
+      "cropTopRatio": 0.02,
+      "cropHeightRatio": 0.50
+    },
+    {
+      "order": 1,
+      "scene": "dashboard",
+      "language": "de",
+      "headline": "Lebensmittel vor dem Ablauf sehen",
+      "subheadline": "Heute, in den nächsten drei Tagen und später auf einen Blick.",
+      "cropTopRatio": 0.02,
+      "cropHeightRatio": 0.78
+    }
+  ]
+}

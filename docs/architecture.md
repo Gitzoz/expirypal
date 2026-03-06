@@ -24,3 +24,13 @@ Rules:
 - `SettingsViewModel` loads and saves notification preferences through the settings repository.
 - `NotificationSchedulingService` wraps `UserNotifications` and is invoked by ViewModels after item or settings changes.
 - `ExpiryPalApp` builds the composition root and injects repositories, services, and `Clock` through `AppContainer`.
+
+## Visual System Boundary
+
+- Styling tokens and reusable view modifiers live in the UI layer only.
+- Visual styling must not leak into ViewModels, Repositories, or Services.
+- The app, public Pages site, and release assets should share the same brand palette derived from the app icon:
+  - evergreen
+  - warm sand
+  - amber accent
+- Consistency is required across app surfaces, but architectural boundaries remain unchanged.

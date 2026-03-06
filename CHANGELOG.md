@@ -1,6 +1,16 @@
 # Changelog
 
 ## Unreleased
+- Added composed App Store screenshot export with deterministic headline/subheadline layouts built from raw simulator captures.
+- Added a release screenshot quality gate flow so screenshot-scene validation and export are part of release readiness.
+- Strengthened raw screenshot-mode navigation titles for Add Item, Edit Item, Archive, and Settings so simulator captures remain legible before composition.
+- Fixed release/test script simulator selection to target a unique simulator UDID when duplicate device names exist across installed iOS runtimes.
+- Fixed screenshot-scene location labels to render localized storage locations instead of raw localization keys.
+- Reworked the brand icon direction toward a more literal food-and-date concept for faster first-glance comprehension.
+- Applied a shared visual design system across the SwiftUI app, GitHub Pages site, and release asset guidance using the existing icon palette as the brand anchor.
+- Added an automated App Store screenshot generation flow with deterministic screenshot app state seeding.
+- Added a release icon source set and wired the app icon asset catalog to a generated 1024x1024 icon.
+- Added screenshot launch-configuration tests and release asset scripts for repeatable capture.
 
 ## 1.0.0 - 2026-03-06
 - Audited and expanded the privacy document to reflect the exact local-only implementation and public-site constraints.

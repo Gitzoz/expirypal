@@ -17,6 +17,7 @@ This repository contains both the authoritative markdown documentation and a pub
 - [Release Docs](release/README.md)
 - [Features](features/)
 - [Decisions](decisions/)
+- [Visual Design System](features/visual-design-system.md)
 
 ## Maintenance Note
 

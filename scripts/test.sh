@@ -1,21 +1,48 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 echo "Running ExpiryPal tests..."
 
-SIMULATOR_DESTINATION=$(xcrun simctl list devices available | awk -F'[()]' '/iPhone/ {gsub(/^[[:space:]]+|[[:space:]]+$/, "", $1); print $1; exit}' || true)
+find_latest_device_id() {
+  local device_name="$1"
 
-if [ -z "$SIMULATOR_DESTINATION" ]; then
-  echo "No available iPhone simulator found."
+  xcrun simctl list devices available --json | jq -r --arg name "$device_name" '
+    [
+      .devices
+      | to_entries[]
+      | select(.key | startswith("com.apple.CoreSimulator.SimRuntime.iOS-"))
+      | .key as $runtime
+      | .value[]
+      | select(.isAvailable == true and .name == $name)
+      | {
+          udid: .udid,
+          runtimeParts: ($runtime | sub("^com.apple.CoreSimulator.SimRuntime.iOS-"; "") | split("-") | map(tonumber))
+        }
+    ]
+    | sort_by(.runtimeParts)
+    | last
+    | .udid // empty
+  '
+}
+
+SIMULATOR_DEVICE_NAME="${SIMULATOR_DEVICE_NAME:-iPhone 17 Pro}"
+SIMULATOR_DEVICE_ID="${SIMULATOR_DEVICE_ID:-$(find_latest_device_id "$SIMULATOR_DEVICE_NAME")}"
+
+if [ -z "$SIMULATOR_DEVICE_ID" ]; then
+  echo "No available simulator found for $SIMULATOR_DEVICE_NAME."
   echo "Install an iOS Simulator runtime in Xcode > Settings > Components."
   exit 1
 fi
+
+xcrun simctl boot "$SIMULATOR_DEVICE_ID" >/dev/null 2>&1 || true
+xcrun simctl bootstatus "$SIMULATOR_DEVICE_ID" -b >/dev/null
 
 xcodebuild \
   -project ExpiryPal.xcodeproj \
   -scheme ExpiryPal \
   -derivedDataPath /tmp/expirypal-deriveddata \
-  -destination "platform=iOS Simulator,name=$SIMULATOR_DESTINATION" \
+  -destination "id=$SIMULATOR_DEVICE_ID" \
+  -parallel-testing-enabled NO \
   test
 
 echo "All tests passed."

@@ -47,3 +47,25 @@ Out of scope:
 - visual regression testing
 - browser-specific layout snapshots
 - third-party uptime checks
+
+## Visual Consistency Validation
+
+- Visual polish changes must not remove accessibility identifiers used by UI tests.
+- App styling work should be validated by rerunning the existing user-flow UI tests rather than adding snapshot tooling.
+- Public site styling changes must continue to pass `scripts/check-pages.sh` and must not introduce remote assets or tracking code.
+
+## Release Screenshot Quality Gate
+
+- Release screenshots are part of the quality gate, not a manual afterthought.
+- Before a release-facing commit:
+  - screenshot-scene UI assertions must pass
+  - the automated screenshot export must be regenerated from the current build
+  - composed store assets must be regenerated from the raw export
+  - required screenshot files must exist for both device classes
+- Screenshot-scene validation must catch:
+  - raw localization keys such as `location.fridge`
+  - English fallback in German screenshots
+  - missing interpolated values for settings labels and dates
+  - stale or missing exported files
+- Screenshot-scene validation should also verify that raw screenshot-mode screens expose clear, localized titles for Add Item, Edit Item, Archive, and Settings.
+- Repository test scripts must target a unique simulator UDID rather than an ambiguous device name when multiple runtimes expose the same simulator model.

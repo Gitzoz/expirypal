@@ -4,10 +4,16 @@ struct ArchiveView: View {
     @StateObject private var viewModel: ArchiveViewModel
     @State private var selectedItem: FoodItem?
     private let makeEditItemViewModel: (FoodItem) -> EditItemViewModel
+    private let isScreenshotMode: Bool
 
-    init(viewModel: ArchiveViewModel, makeEditItemViewModel: @escaping (FoodItem) -> EditItemViewModel) {
+    init(
+        viewModel: ArchiveViewModel,
+        makeEditItemViewModel: @escaping (FoodItem) -> EditItemViewModel,
+        isScreenshotMode: Bool = false
+    ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.makeEditItemViewModel = makeEditItemViewModel
+        self.isScreenshotMode = isScreenshotMode
     }
 
     var body: some View {
@@ -17,12 +23,17 @@ struct ArchiveView: View {
                     Section {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("archive.empty.title")
-                                .font(.headline)
+                                .font(.headline.weight(.semibold))
+                                .foregroundStyle(AppTheme.evergreenDeep)
                             Text("archive.empty.message")
                                 .font(.subheadline)
-                                .foregroundStyle(.secondary)
+                                .foregroundStyle(AppTheme.evergreen)
                         }
+                        .padding(20)
+                        .expiryPalCard()
                     }
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
                 } else {
                     Section {
                         ForEach(viewModel.archivedItems) { item in
@@ -33,18 +44,23 @@ struct ArchiveView: View {
                             }
                             .buttonStyle(.plain)
                             .accessibilityIdentifier("archive.row.\(item.id.uuidString)")
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
                         }
                     }
                 }
             }
+            .listStyle(.plain)
+            .expiryPalScreenChrome()
             .navigationTitle("archive.title")
+            .screenshotModeNavigationTitle("archive.title", isEnabled: isScreenshotMode)
             .onAppear {
                 viewModel.load()
             }
             .sheet(item: $selectedItem, onDismiss: {
                 viewModel.load()
             }) { item in
-                EditItemView(viewModel: makeEditItemViewModel(item))
+                EditItemView(viewModel: makeEditItemViewModel(item), isScreenshotMode: false)
             }
         }
     }
@@ -56,17 +72,26 @@ private struct ArchiveRowView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(verbatim: item.name)
-                .font(.headline)
+                .font(.system(.title3, design: .rounded).weight(.semibold))
+                .foregroundStyle(AppTheme.evergreenDeep)
             HStack(spacing: 8) {
-                Text(item.status == .consumed ? "archive.status.consumed" : "archive.status.discarded")
-                Text(LocalizedStringKey("location.\(item.location.rawValue)"))
+                ExpiryPalPill(
+                    fill: item.status == .consumed ? AppTheme.sandStrong : AppTheme.amberSoft,
+                    foreground: item.status == .consumed ? AppTheme.evergreenDeep : AppTheme.rose
+                ) {
+                    Text(item.status == .consumed ? "archive.status.consumed" : "archive.status.discarded")
+                }
+
+                ExpiryPalPill(fill: Color.white.opacity(0.85)) {
+                    Text(item.location.localizedKey)
+                }
             }
-            .font(.subheadline)
-            .foregroundStyle(.secondary)
 
             Text(item.expiryDate.formatted(date: .abbreviated, time: .omitted))
-                .font(.caption)
-                .foregroundStyle(.tertiary)
+                .font(.footnote.weight(.semibold))
+                .foregroundStyle(AppTheme.evergreen)
         }
+        .padding(18)
+        .expiryPalCard(fill: AppTheme.sandStrong)
     }
 }
