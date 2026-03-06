@@ -14,7 +14,7 @@ Recommended screenshots:
 3. Edit Item flow
 4. Archive view
 5. Settings with local notification controls
-6. German-localized dashboard
+6. Full German-localized store set matching the English story order when localized App Store assets are needed
 
 Detailed shot list:
 - [Screenshot Shot List](screenshots.md)
@@ -32,6 +32,7 @@ Automated generation:
 - Ensure no simulator chrome is visible in final store assets
 - Capture both empty and populated states only if they help explain the product
 - Final store compositions must add headline/subheadline context so the set explains the app quickly in App Store browsing.
+- The screen image inside a composed asset must preserve its own aspect ratio; cropping or padding is acceptable, stretching is not.
 
 ## App Icon Rules
 - Keep the icon simple and legible at small sizes

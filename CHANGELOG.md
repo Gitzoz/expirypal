@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Expanded the screenshot pipeline to generate and validate full German raw and composed App Store sets instead of only a localized dashboard frame.
 - Added composed App Store screenshot export with deterministic headline/subheadline layouts built from raw simulator captures.
 - Added a release screenshot quality gate flow so screenshot-scene validation and export are part of release readiness.
 - Strengthened raw screenshot-mode navigation titles for Add Item, Edit Item, Archive, and Settings so simulator captures remain legible before composition.

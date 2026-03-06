@@ -16,7 +16,7 @@
       "headline": "Add items in seconds",
       "subheadline": "Save a food name, expiry date, and location with a lightweight form.",
       "cropTopRatio": 0.02,
-      "cropHeightRatio": 0.46
+      "cropHeightRatio": 0.54
     },
     {
       "order": 3,
@@ -25,7 +25,7 @@
       "headline": "Update dates and status fast",
       "subheadline": "Edit expiry details or move finished items out of your active list.",
       "cropTopRatio": 0.02,
-      "cropHeightRatio": 0.50
+      "cropHeightRatio": 0.72
     },
     {
       "order": 4,
@@ -34,7 +34,7 @@
       "headline": "Keep consumed items organized",
       "subheadline": "Archive consumed and discarded food without cluttering the dashboard.",
       "cropTopRatio": 0.02,
-      "cropHeightRatio": 0.42
+      "cropHeightRatio": 0.50
     },
     {
       "order": 5,
@@ -43,7 +43,7 @@
       "headline": "Local reminders. No tracking.",
       "subheadline": "Configure expiry notifications while keeping your data on device.",
       "cropTopRatio": 0.02,
-      "cropHeightRatio": 0.50
+      "cropHeightRatio": 0.55
     },
     {
       "order": 1,
@@ -53,6 +53,42 @@
       "subheadline": "Heute, in den nächsten drei Tagen und später auf einen Blick.",
       "cropTopRatio": 0.02,
       "cropHeightRatio": 0.78
+    },
+    {
+      "order": 2,
+      "scene": "addItem",
+      "language": "de",
+      "headline": "Einträge in Sekunden anlegen",
+      "subheadline": "Name, Ablaufdatum und Ort mit einem leichten Formular speichern.",
+      "cropTopRatio": 0.02,
+      "cropHeightRatio": 0.54
+    },
+    {
+      "order": 3,
+      "scene": "editItem",
+      "language": "de",
+      "headline": "Daten und Status schnell anpassen",
+      "subheadline": "Ablaufdaten ändern oder fertige Einträge aus der Übersicht nehmen.",
+      "cropTopRatio": 0.02,
+      "cropHeightRatio": 0.72
+    },
+    {
+      "order": 4,
+      "scene": "archive",
+      "language": "de",
+      "headline": "Verbrauchtes ordentlich ablegen",
+      "subheadline": "Verbrauchte und weggeworfene Lebensmittel ohne Unordnung archivieren.",
+      "cropTopRatio": 0.02,
+      "cropHeightRatio": 0.50
+    },
+    {
+      "order": 5,
+      "scene": "settings",
+      "language": "de",
+      "headline": "Lokale Erinnerungen. Kein Tracking.",
+      "subheadline": "Ablauf-Erinnerungen einstellen und die Daten auf dem Gerät behalten.",
+      "cropTopRatio": 0.02,
+      "cropHeightRatio": 0.55
     }
   ]
 }

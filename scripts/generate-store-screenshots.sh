@@ -8,7 +8,7 @@ APP_PATH="$DERIVED_DATA_PATH/Build/Products/Debug-iphonesimulator/ExpiryPal.app"
 APP_BUNDLE_ID="com.expirypal.app"
 
 SCENES=(dashboard addItem editItem archive settings)
-GERMAN_SCENES=(dashboard)
+GERMAN_SCENES=(dashboard addItem editItem archive settings)
 
 device_name_for_class() {
   case "$1" in

@@ -84,6 +84,25 @@ func topCrop(of cgImage: CGImage, topRatio: Double, heightRatio: Double) -> CGIm
     return cgImage.cropping(to: CGRect(x: 0, y: y, width: width, height: cropHeight))
 }
 
+func aspectFitRect(imageSize: CGSize, in bounds: CGRect, topAligned: Bool = true) -> CGRect {
+    let imageAspect = imageSize.width / imageSize.height
+    let boundsAspect = bounds.width / bounds.height
+
+    let fittedSize: CGSize
+    if imageAspect > boundsAspect {
+        fittedSize = CGSize(width: bounds.width, height: bounds.width / imageAspect)
+    } else {
+        fittedSize = CGSize(width: bounds.height * imageAspect, height: bounds.height)
+    }
+
+    let x = bounds.minX + (bounds.width - fittedSize.width) / 2
+    let y = topAligned
+        ? bounds.maxY - fittedSize.height
+        : bounds.minY + (bounds.height - fittedSize.height) / 2
+
+    return CGRect(origin: CGPoint(x: x, y: y), size: fittedSize).integral
+}
+
 for deviceClass in ["6.1-inch", "6.7-inch"] {
     for entry in manifest.entries {
         let inputURL = rawRootURL
@@ -135,25 +154,49 @@ for deviceClass in ["6.1-inch", "6.7-inch"] {
             color: muted
         ).draw(with: subtitleRect, options: [.usesLineFragmentOrigin, .usesFontLeading])
 
-        let panelWidth = canvasRect.width * 0.82
-        let panelHeight = canvasRect.height * 0.62
+        let panelInset: CGFloat = 14
+        let maxPanelWidth = canvasRect.width * 0.86
+        let minPanelWidth = canvasRect.width * 0.74
+        let panelBottom = canvasRect.height * 0.13
+        let panelTopLimit = canvasRect.height * 0.75
+        let maxPanelHeight = panelTopLimit - panelBottom
+        let imageAspect = CGFloat(croppedCG.width) / CGFloat(croppedCG.height)
+
+        var innerWidth = maxPanelWidth - (panelInset * 2)
+        var innerHeight = innerWidth / imageAspect
+        var panelWidth = maxPanelWidth
+        var panelHeight = innerHeight + (panelInset * 2)
+
+        if panelHeight > maxPanelHeight {
+            innerHeight = maxPanelHeight - (panelInset * 2)
+            innerWidth = innerHeight * imageAspect
+            panelWidth = max(minPanelWidth, innerWidth + (panelInset * 2))
+            panelHeight = innerHeight + (panelInset * 2)
+        }
+
+        let panelY = max(panelBottom, panelTopLimit - panelHeight)
         let panelRect = CGRect(
             x: (canvasRect.width - panelWidth) / 2,
-            y: canvasRect.height * 0.07,
+            y: panelY,
             width: panelWidth,
             height: panelHeight
         )
 
         ctx.setShadow(offset: CGSize(width: 0, height: -16), blur: 34, color: nsColor(0x21463B, alpha: 0.12).cgColor)
         sandStrong.setFill()
-        NSBezierPath(roundedRect: panelRect, xRadius: 46, yRadius: 46).fill()
+        NSBezierPath(roundedRect: panelRect, xRadius: 42, yRadius: 42).fill()
         ctx.setShadow(offset: .zero, blur: 0, color: nil)
 
         let croppedImage = NSImage(cgImage: croppedCG, size: NSSize(width: croppedCG.width, height: croppedCG.height))
-        let insetRect = panelRect.insetBy(dx: 18, dy: 18)
-        let screenshotFrame = NSBezierPath(roundedRect: insetRect, xRadius: 38, yRadius: 38)
+        let insetRect = panelRect.insetBy(dx: panelInset, dy: panelInset)
+        let screenshotFrame = NSBezierPath(roundedRect: insetRect, xRadius: 34, yRadius: 34)
         screenshotFrame.addClip()
-        croppedImage.draw(in: insetRect)
+        let fittedImageRect = aspectFitRect(
+            imageSize: CGSize(width: croppedCG.width, height: croppedCG.height),
+            in: insetRect,
+            topAligned: true
+        )
+        croppedImage.draw(in: fittedImageRect)
 
         outputImage.unlockFocus()
 

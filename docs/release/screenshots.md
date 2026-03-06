@@ -11,8 +11,12 @@
 4. Archive populated with consumed and discarded examples
 5. Settings with notifications enabled and a non-default reminder schedule
 
-## German Screen
+## German Screens
 1. Dashboard localized in German with no English fallback
+2. Add Item localized in German
+3. Edit Item localized in German
+4. Archive localized in German
+5. Settings localized in German
 
 ## Demo Data Guidance
 - Use realistic food names: Milk, Yogurt, Spinach, Bread, Soup, Frozen Berries
@@ -41,6 +45,10 @@
 - `archive`
 - `settings`
 - `dashboard` in German
+- `addItem` in German
+- `editItem` in German
+- `archive` in German
+- `settings` in German
 
 ## Store Composition Rules
 - Final store assets are composed from the raw simulator captures, not captured manually.
@@ -50,7 +58,9 @@
   - icon-backed brand context
   - shared background/palette
 - Final composed assets must preserve the original device screenshot dimensions for each class.
+- The screenshot image inside the composed frame must preserve its own aspect ratio; composition may crop or pad, but it may not stretch the screen vertically or horizontally.
 - Scene-specific framing may crop empty lower space, but must not hide the core action shown in the screen.
+- Composition should avoid excessive empty area inside the framed screenshot; form, archive, and settings scenes should crop to the active content and use a tight device frame so the visible product UI, not the empty lower canvas, dominates the card.
 - Raw captures should still read cleanly on their own before composition, especially for modal screens such as Add Item and Edit Item.
 
 ## English Story Order
@@ -59,3 +69,10 @@
 3. Edit Item: `Update dates and status fast`
 4. Archive: `Keep consumed items organized`
 5. Settings: `Local reminders. No cloud. No tracking.`
+
+## German Story Order
+1. Dashboard: `Lebensmittel vor dem Ablauf sehen`
+2. Add Item: `Einträge in Sekunden anlegen`
+3. Edit Item: `Daten und Status schnell anpassen`
+4. Archive: `Verbrauchtes ordentlich ablegen`
+5. Settings: `Lokale Erinnerungen. Kein Tracking.`
