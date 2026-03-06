@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExpiryPal | Privacy-first food expiry tracking</title>
+    <meta
+      name="description"
+      content="ExpiryPal is a privacy-first iOS app for tracking food expiry dates with local notifications and no tracking."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html">ExpiryPal</a>
+        <nav class="topnav" aria-label="Primary">
+          <a href="docs.html">Docs</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="roadmap.html">Roadmap</a>
+          <a href="https://github.com/Gitzoz/expirypal">GitHub</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero panel">
+          <div class="hero-copy">
+            <p class="eyebrow">Offline-first iOS app</p>
+            <h1>Track food expiry dates without giving up your privacy.</h1>
+            <p class="lede">
+              ExpiryPal helps people reduce food waste with a focused dashboard,
+              simple item entry, and local reminders. No accounts. No analytics.
+              No backend.
+            </p>
+            <div class="badge-row" aria-label="Product principles">
+              <span class="badge">Offline-first</span>
+              <span class="badge">Local notifications</span>
+              <span class="badge">No tracking</span>
+              <span class="badge">English + German</span>
+            </div>
+            <div class="cta-row">
+              <a class="button button-primary" href="docs.html">Read the docs</a>
+              <a class="button button-secondary" href="roadmap.html">View roadmap</a>
+            </div>
+          </div>
+          <aside class="hero-aside card-stack" aria-label="Current product snapshot">
+            <div class="card-note">
+              <p class="note-label">Implemented now</p>
+              <ul>
+                <li>Dashboard</li>
+                <li>Add Item</li>
+                <li>SwiftData baseline</li>
+                <li>EN/DE localization baseline</li>
+              </ul>
+            </div>
+            <div class="card-note accent">
+              <p class="note-label">Next up</p>
+              <ul>
+                <li>Edit Item</li>
+                <li>Archive</li>
+                <li>Settings</li>
+                <li>Notification scheduling</li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section-grid">
+          <div>
+            <p class="section-label">Product promise</p>
+            <h2>Built to stay small, understandable, and local.</h2>
+          </div>
+          <div class="three-up">
+            <article class="panel compact-card">
+              <h3>Reduce food waste</h3>
+              <p>
+                Add what you bought, see what expires soon, and keep urgency visible
+                on one dashboard.
+              </p>
+            </article>
+            <article class="panel compact-card">
+              <h3>Stay private</h3>
+              <p>
+                Data stays on device, reminders are local only, and the project does
+                not use tracking, analytics, or third-party SDKs.
+              </p>
+            </article>
+            <article class="panel compact-card">
+              <h3>Keep it simple</h3>
+              <p>
+                ExpiryPal is intentionally narrow: a paid app with a clear v1 scope and
+                no speculative features.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-grid ruled">
+          <div>
+            <p class="section-label">How it works</p>
+            <h2>A short path from item entry to timely reminders.</h2>
+          </div>
+          <div class="steps">
+            <article class="step panel">
+              <span class="step-index">01</span>
+              <h3>Add items</h3>
+              <p>Capture a name, expiry date, storage location, and optional details.</p>
+            </article>
+            <article class="step panel">
+              <span class="step-index">02</span>
+              <h3>See urgency</h3>
+              <p>Dashboard groups active items into Today, Next 3 Days, Later, and All Active.</p>
+            </article>
+            <article class="step panel">
+              <span class="step-index">03</span>
+              <h3>Get local reminders</h3>
+              <p>Notifications are planned as local-only reminders at 3 days, 1 day, and expiry day.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-grid ruled">
+          <div>
+            <p class="section-label">MVP scope</p>
+            <h2>What version 1 includes, and what it does not.</h2>
+          </div>
+          <div class="scope-grid">
+            <article class="panel compact-card">
+              <h3>Required screens</h3>
+              <ul>
+                <li>Dashboard</li>
+                <li>Add Item</li>
+                <li>Edit Item</li>
+                <li>Archive</li>
+                <li>Settings</li>
+              </ul>
+            </article>
+            <article class="panel compact-card">
+              <h3>Notification rules</h3>
+              <ul>
+                <li>3 days before expiry</li>
+                <li>1 day before expiry</li>
+                <li>On expiry day</li>
+                <li>Localized and local-only</li>
+              </ul>
+            </article>
+            <article class="panel compact-card warning-card">
+              <h3>Explicit v1 boundaries</h3>
+              <p>
+                No backend, no analytics, no sync, no widgets, no barcode scanning, and
+                no additional languages beyond English and German.
+              </p>
+              <a class="text-link" href="docs.html">See spec and decision docs</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-grid ruled">
+          <div>
+            <p class="section-label">Privacy by design</p>
+            <h2>Repository, app, and public site all follow the same rule set.</h2>
+          </div>
+          <div class="three-up">
+            <article class="panel compact-card">
+              <h3>Local-only data</h3>
+              <p>Food item data is stored on device with SwiftData. There is no backend.</p>
+            </article>
+            <article class="panel compact-card">
+              <h3>No tracking</h3>
+              <p>The app and this site avoid analytics, tracking pixels, ads, and third-party embeds.</p>
+            </article>
+            <article class="panel compact-card">
+              <h3>Clear licensing</h3>
+              <p>Source code is MIT-licensed. ExpiryPal branding remains proprietary.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-grid ruled">
+          <div>
+            <p class="section-label">Documentation hub</p>
+            <h2>Use the public hub for overview, then go to the repository docs for detail.</h2>
+          </div>
+          <div class="docs-grid">
+            <a class="doc-link panel" href="docs.html">
+              <span class="doc-kind">Hub</span>
+              <strong>Public docs index</strong>
+              <span>Start here for architecture, roadmap, testing, and feature links.</span>
+            </a>
+            <a class="doc-link panel" href="privacy.html">
+              <span class="doc-kind">Privacy</span>
+              <strong>Privacy summary</strong>
+              <span>Understand the local-only and no-tracking guarantees.</span>
+            </a>
+            <a class="doc-link panel" href="roadmap.html">
+              <span class="doc-kind">Roadmap</span>
+              <strong>Current status</strong>
+              <span>See what is implemented, next, and out of scope for v1.</span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <strong>ExpiryPal</strong>
+          <p>MIT applies to source code only. Branding is not covered by MIT.</p>
+        </div>
+        <div class="footer-links">
+          <a href="docs.html">Docs</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="roadmap.html">Roadmap</a>
+          <a href="https://github.com/Gitzoz/expirypal">Repository</a>
+        </div>
+        <p class="footer-meta">Last updated: 2026-03-06</p>
+      </footer>
+    </div>
+  </body>
+</html>

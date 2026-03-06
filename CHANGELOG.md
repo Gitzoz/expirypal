@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- Added a GitHub Pages-ready static landing/docs site under `docs/site/`.
+- Added a deterministic Pages validation script in `scripts/check-pages.sh`.
+- Added a GitHub Actions workflow for Pages deployment from repository-managed static files.
+- Added public docs governance for the Pages site, including a feature doc and ADR.
 - Added Dashboard feature baseline with MVVM + Repository + Services scaffolding.
 - Added Dashboard segmentation logic (Today, Next 3 Days, Later, All Active) with overdue mapped to Today.
 - Added English and German dashboard localization keys.
