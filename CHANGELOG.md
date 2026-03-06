@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+
+## 1.0.0 - 2026-03-06
+- Audited and expanded the privacy document to reflect the exact local-only implementation and public-site constraints.
+- Added internal release documentation for App Store copy, asset preparation, warning decision, and ship checklist.
+- Polished Archive rows to surface status, storage location, and expiry date more clearly.
+- Polished Settings to show a local-only notification note and disable dependent notification controls when notifications are turned off.
 - Hardened business-logic coverage across settings persistence, archive loading, dashboard status transitions, edit validation, and no-op notification service behavior.
 - Added release-preparation test coverage for the app-target in-memory repository used by previews and UI-test mode.
 - Added Edit Item, Archive, Settings, and local notification scheduling documentation.

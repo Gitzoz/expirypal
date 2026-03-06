@@ -14,6 +14,7 @@ This repository contains both the authoritative markdown documentation and a pub
 - [Data Model](data-model.md)
 - [Notifications](notifications.md)
 - [Testing](testing.md)
+- [Release Docs](release/README.md)
 - [Features](features/)
 - [Decisions](decisions/)
 

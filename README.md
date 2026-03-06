@@ -20,7 +20,22 @@ The public site is intended to:
 
 ## Status
 
-Baseline repository with Dashboard and Add Item implemented.
+Version 1 feature set is implemented:
+- Dashboard
+- Add Item
+- Edit Item
+- Archive
+- Settings
+- Local notification scheduling
+
+Current work is limited to release preparation, polish, and documentation.
+
+## Release Docs
+
+- Release docs index: `docs/release/README.md`
+- App Store copy draft: `docs/release/app-store-copy.md`
+- Asset checklist: `docs/release/assets.md`
+- Release checklist: `docs/release/checklist.md`
 
 ## Principles
 

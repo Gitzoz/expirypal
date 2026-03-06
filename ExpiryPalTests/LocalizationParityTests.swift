@@ -56,6 +56,7 @@ final class LocalizationParityTests: XCTestCase {
             "settings.field.notifyOneDayBefore",
             "settings.field.notifyOnDay",
             "settings.field.notificationTime",
+            "settings.footer.localOnly",
             "settings.validation.generic",
             "location.fridge",
             "location.freezer",

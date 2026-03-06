@@ -13,6 +13,7 @@ Display all non-active food items in a dedicated archive screen.
 - Archived items never appear in Dashboard.
 - Users can open an archived item and update its details.
 - Archive is automatically refreshed after status changes.
+- Archive rows should make status and storage location easy to scan.
 
 ## Implementation summary
 - `ArchiveViewModel` loads non-active items from repository queries.

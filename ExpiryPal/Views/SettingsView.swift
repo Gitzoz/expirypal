@@ -20,9 +20,11 @@ struct SettingsView: View {
                     .accessibilityIdentifier("settings.notifyDaysBeforeStepper")
 
                     Toggle("settings.field.notifyOneDayBefore", isOn: $viewModel.notifyOneDayBefore)
+                        .disabled(!viewModel.notificationsEnabled)
                         .accessibilityIdentifier("settings.notifyOneDayBeforeToggle")
 
                     Toggle("settings.field.notifyOnDay", isOn: $viewModel.notifyOnDay)
+                        .disabled(!viewModel.notificationsEnabled)
                         .accessibilityIdentifier("settings.notifyOnDayToggle")
 
                     DatePicker(
@@ -30,6 +32,7 @@ struct SettingsView: View {
                         selection: $viewModel.notificationTime,
                         displayedComponents: .hourAndMinute
                     )
+                    .disabled(!viewModel.notificationsEnabled)
                     .accessibilityIdentifier("settings.notificationTimePicker")
                 } header: {
                     Text("settings.section.notifications")
@@ -37,6 +40,8 @@ struct SettingsView: View {
                     if let validationMessageKey = viewModel.validationMessageKey {
                         Text(LocalizedStringKey(validationMessageKey))
                             .foregroundStyle(.red)
+                    } else {
+                        Text("settings.footer.localOnly")
                     }
                 }
             }

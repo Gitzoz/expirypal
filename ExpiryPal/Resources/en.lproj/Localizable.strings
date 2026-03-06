@@ -54,6 +54,7 @@
 "settings.field.notifyOneDayBefore" = "Notify 1 day before expiry";
 "settings.field.notifyOnDay" = "Notify on expiry day";
 "settings.field.notificationTime" = "Notification time";
+"settings.footer.localOnly" = "Notifications stay on this device and are never sent to a backend.";
 "settings.validation.generic" = "Settings could not be saved.";
 
 "location.fridge" = "Fridge";

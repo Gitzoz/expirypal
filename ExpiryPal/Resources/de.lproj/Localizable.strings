@@ -54,6 +54,7 @@
 "settings.field.notifyOneDayBefore" = "1 Tag vor Ablauf benachrichtigen";
 "settings.field.notifyOnDay" = "Am Ablauftag benachrichtigen";
 "settings.field.notificationTime" = "Benachrichtigungszeit";
+"settings.footer.localOnly" = "Benachrichtigungen bleiben auf diesem Gerät und werden nie an ein Backend gesendet.";
 "settings.validation.generic" = "Die Einstellungen konnten nicht gespeichert werden.";
 
 "location.fridge" = "Kühlschrank";

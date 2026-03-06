@@ -57,9 +57,16 @@ private struct ArchiveRowView: View {
         VStack(alignment: .leading, spacing: 4) {
             Text(verbatim: item.name)
                 .font(.headline)
-            Text(item.status == .consumed ? "archive.status.consumed" : "archive.status.discarded")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+            HStack(spacing: 8) {
+                Text(item.status == .consumed ? "archive.status.consumed" : "archive.status.discarded")
+                Text(LocalizedStringKey("location.\(item.location.rawValue)"))
+            }
+            .font(.subheadline)
+            .foregroundStyle(.secondary)
+
+            Text(item.expiryDate.formatted(date: .abbreviated, time: .omitted))
+                .font(.caption)
+                .foregroundStyle(.tertiary)
         }
     }
 }

@@ -13,6 +13,7 @@ Allow users to configure local notification behavior through a single persisted 
 - Users can enable or disable 3-day, 1-day, and expiry-day reminders.
 - Users can set the notification delivery time.
 - Saving settings persists locally and reschedules notifications for active items.
+- Notification controls remain visible even when disabled globally, but non-toggle controls are visually disabled until notifications are re-enabled.
 
 ## Implementation summary
 - `AppSettings` is persisted with SwiftData and enforced as exactly one record.
@@ -26,3 +27,4 @@ Allow users to configure local notification behavior through a single persisted 
 
 ## Localization notes
 - Settings labels, help text, and save actions must use English and German localization keys.
+- The settings screen should explicitly communicate that notifications are local only.
