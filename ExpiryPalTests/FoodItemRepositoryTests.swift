@@ -98,6 +98,25 @@ final class FoodItemRepositoryTests: XCTestCase {
         XCTAssertEqual(items.map(\.name), ["Discarded Soup"])
     }
 
+    func testFetchItemReturnsMatchingIdentifier() throws {
+        let container = try makeContainer()
+        let repository = SwiftDataFoodItemRepository(
+            modelContext: container.mainContext,
+            clock: TestClock(now: makeDate(year: 2026, month: 3, day: 6, hour: 9))
+        )
+        let item = try repository.addItem(
+            name: "Milk",
+            expiryDate: makeDate(year: 2026, month: 3, day: 7, hour: 9),
+            location: .fridge,
+            quantity: nil,
+            note: nil
+        )
+
+        let fetchedItem = try repository.fetchItem(id: item.id)
+
+        XCTAssertEqual(fetchedItem?.id, item.id)
+    }
+
     func testUpdateItemChangesFieldsAndUpdatedAt() throws {
         let clock = TestClock(now: makeDate(year: 2026, month: 3, day: 6, hour: 9))
         let container = try makeContainer()

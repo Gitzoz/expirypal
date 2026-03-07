@@ -20,20 +20,14 @@ final class FoodItem {
 
     var location: StorageLocation {
         get {
-            guard let location = StorageLocation(rawValue: locationRaw) else {
-                preconditionFailure("Invalid storage location raw value: \(locationRaw)")
-            }
-            return location
+            StorageLocation(rawValue: locationRaw) ?? .fridge
         }
         set { locationRaw = newValue.rawValue }
     }
 
     var status: ItemStatus {
         get {
-            guard let status = ItemStatus(rawValue: statusRaw) else {
-                preconditionFailure("Invalid item status raw value: \(statusRaw)")
-            }
-            return status
+            ItemStatus(rawValue: statusRaw) ?? .active
         }
         set { statusRaw = newValue.rawValue }
     }
@@ -61,8 +55,6 @@ final class FoodItem {
     }
 
     private static func normalizedName(_ value: String) -> String {
-        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
-        precondition(!trimmed.isEmpty, "FoodItem name must be trimmed and non-empty")
-        return trimmed
+        value.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

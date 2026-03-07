@@ -12,6 +12,7 @@
 
 ## Privacy
 - [ ] `PRIVACY.md` matches implementation
+- [ ] `PrivacyInfo.xcprivacy` is present in the app bundle and matches implementation
 - [ ] Data remains local-only
 - [ ] Notifications remain local-only
 - [ ] No tracking, analytics, ads, or third-party SDKs are present
@@ -19,7 +20,8 @@
 ## Store Preparation
 - [ ] App Store copy is finalized
 - [ ] App icon set is finalized
-- [ ] Screenshots are captured for required device classes
+- [ ] `./scripts/check-release-screenshots.sh` passes
+- [ ] Submission screenshots exist for 6.7-inch, 6.5-inch, and 5.5-inch device classes
 - [ ] Privacy policy URL and support URL are ready
 
 ## Known Warning Decision

@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- Hardened SwiftData bootstrap and model safety for release preparation by using an explicit persistent-store location, safer model normalization, and a Release-safe item lookup path.
+- Added direct model tests for `FoodItem`, enabled scheme code coverage reporting, and expanded repository coverage for item lookup behavior.
+- Added an app privacy manifest (`PrivacyInfo.xcprivacy`) and release checklist/privacy documentation updates for App Store submission.
+- Added a deterministic submission export step that derives exact 6.7-inch, 6.5-inch, and 5.5-inch App Store screenshot files from the composed master set.
 - Expanded the screenshot pipeline to generate and validate full German raw and composed App Store sets instead of only a localized dashboard frame.
 - Added composed App Store screenshot export with deterministic headline/subheadline layouts built from raw simulator captures.
 - Added a release screenshot quality gate flow so screenshot-scene validation and export are part of release readiness.

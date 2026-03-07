@@ -20,6 +20,7 @@
 		A0000001000000000000000B /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000B /* DashboardViewModel.swift */; };
 		A0000001000000000000000C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000C /* DashboardView.swift */; };
 		A0000001000000000000000D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00000120000000000000001 /* Localizable.strings */; };
+		A00000010000000000000036 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000035 /* PrivacyInfo.xcprivacy */; };
 		A0000001000000000000000E /* SwiftDataFoodItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000E /* SwiftDataFoodItemRepository.swift */; };
 		A0000001000000000000000F /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000F /* AddItemViewModel.swift */; };
 		A00000010000000000000010 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000010 /* AddItemView.swift */; };
@@ -50,6 +51,7 @@
 		A0000001000000000000002A /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000002A /* SettingsViewModelTests.swift */; };
 		A0000001000000000000002B /* AppSettingsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000002B /* AppSettingsRepositoryTests.swift */; };
 		A0000001000000000000002C /* NotificationSchedulingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000002C /* NotificationSchedulingServiceTests.swift */; };
+		A0000001000000000000002D /* FoodItemModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000002D /* FoodItemModelTests.swift */; };
 		A00000010000000000000030 /* GermanLocalizationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000030 /* GermanLocalizationUITests.swift */; };
 		A00000010000000000000031 /* AddItemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000031 /* AddItemUITests.swift */; };
 		A00000010000000000000032 /* EditItemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000032 /* EditItemUITests.swift */; };
@@ -117,11 +119,13 @@
 		A0000011000000000000002A /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelTests.swift; sourceTree = "<group>"; };
 		A0000011000000000000002B /* AppSettingsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsRepositoryTests.swift; sourceTree = "<group>"; };
 		A0000011000000000000002C /* NotificationSchedulingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSchedulingServiceTests.swift; sourceTree = "<group>"; };
+		A0000011000000000000002D /* FoodItemModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemModelTests.swift; sourceTree = "<group>"; };
 		A00000110000000000000030 /* GermanLocalizationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GermanLocalizationUITests.swift; sourceTree = "<group>"; };
 		A00000110000000000000031 /* AddItemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemUITests.swift; sourceTree = "<group>"; };
 		A00000110000000000000032 /* EditItemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemUITests.swift; sourceTree = "<group>"; };
 		A00000110000000000000033 /* ArchiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUITests.swift; sourceTree = "<group>"; };
 		A00000110000000000000034 /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
+		A00000110000000000000035 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		A00000120000000000000001 /* Localizable.strings */ = {isa = PBXVariantGroup; children = (A00000120000000000000002 /* en */, A00000120000000000000003 /* de */, ); name = Localizable.strings; sourceTree = "<group>"; };
 		A00000120000000000000002 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A00000120000000000000003 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -169,7 +173,7 @@
 		A00000600000000000000007 /* Utilities */ = {isa = PBXGroup; children = (A0000011000000000000000A /* DashboardSegmentation.swift */, ); path = Utilities; sourceTree = "<group>"; };
 		A00000600000000000000008 /* ViewModels */ = {isa = PBXGroup; children = (A0000011000000000000000B /* DashboardViewModel.swift */, A0000011000000000000000F /* AddItemViewModel.swift */, A00000110000000000000018 /* ArchiveViewModel.swift */, A00000110000000000000019 /* EditItemViewModel.swift */, A0000011000000000000001A /* SettingsViewModel.swift */, ); path = ViewModels; sourceTree = "<group>"; };
 		A00000600000000000000009 /* Views */ = {isa = PBXGroup; children = (A0000011000000000000000C /* DashboardView.swift */, A00000110000000000000010 /* AddItemView.swift */, A0000011000000000000001B /* EditItemView.swift */, A0000011000000000000001C /* ArchiveView.swift */, A0000011000000000000001D /* SettingsView.swift */, A0000011000000000000001E /* RootTabView.swift */, ); path = Views; sourceTree = "<group>"; };
-		A0000060000000000000000A /* Resources */ = {isa = PBXGroup; children = (A00000120000000000000001 /* Localizable.strings */, ); path = Resources; sourceTree = "<group>"; };
+		A0000060000000000000000A /* Resources */ = {isa = PBXGroup; children = (A00000120000000000000001 /* Localizable.strings */, A00000110000000000000035 /* PrivacyInfo.xcprivacy */, ); path = Resources; sourceTree = "<group>"; };
 		A00000600000000000000010 /* ExpiryPalTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +181,7 @@
 				A0000011000000000000002B /* AppSettingsRepositoryTests.swift */,
 				A00000110000000000000020 /* DashboardSegmentationTests.swift */,
 				A00000110000000000000029 /* EditItemViewModelTests.swift */,
+				A0000011000000000000002D /* FoodItemModelTests.swift */,
 				A00000110000000000000025 /* FoodItemRepositoryTests.swift */,
 				A00000110000000000000021 /* LocalizationParityTests.swift */,
 				A0000011000000000000002C /* NotificationSchedulingServiceTests.swift */,
@@ -286,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0000001000000000000000D /* Localizable.strings in Resources */,
+				A00000010000000000000036 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +354,7 @@
 				A0000001000000000000002B /* AppSettingsRepositoryTests.swift in Sources */,
 				A00000010000000000000020 /* DashboardSegmentationTests.swift in Sources */,
 				A00000010000000000000029 /* EditItemViewModelTests.swift in Sources */,
+				A0000001000000000000002D /* FoodItemModelTests.swift in Sources */,
 				A00000010000000000000025 /* FoodItemRepositoryTests.swift in Sources */,
 				A00000010000000000000021 /* LocalizationParityTests.swift in Sources */,
 				A0000001000000000000002C /* NotificationSchedulingServiceTests.swift in Sources */,

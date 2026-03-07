@@ -73,7 +73,7 @@ struct ExpiryPalApp: App {
         components.day = 6
         components.hour = 9
         components.minute = 41
-        return components.date!
+        return components.date ?? Date(timeIntervalSince1970: 0)
     }
 }
 

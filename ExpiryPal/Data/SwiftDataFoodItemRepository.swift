@@ -34,12 +34,8 @@ final class SwiftDataFoodItemRepository: FoodItemRepository {
     }
 
     func fetchItem(id: UUID) throws -> FoodItem? {
-        let descriptor = FetchDescriptor<FoodItem>(
-            predicate: #Predicate<FoodItem> { item in
-                item.id == id
-            }
-        )
-        return try modelContext.fetch(descriptor).first
+        let descriptor = FetchDescriptor<FoodItem>()
+        return try modelContext.fetch(descriptor).first(where: { $0.id == id })
     }
 
     func addItem(

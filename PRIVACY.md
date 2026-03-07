@@ -15,6 +15,11 @@ ExpiryPal does not use:
 - cloud sync
 - third-party SDKs
 
+The app bundle includes a privacy manifest that declares:
+- no tracking
+- no collected data types
+- no accessed required-reason API categories beyond the app's current local-only implementation
+
 ## Data Stored On Device
 
 ExpiryPal stores the following data locally:

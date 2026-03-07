@@ -33,6 +33,10 @@ Use XCTest only.
 - Business-logic coverage is tracked primarily across `Data`, `Services`, `ViewModels`, and `Utilities`.
 - Release-preparation coverage work should prefer targeted branch tests for persistence updates, status transitions, scheduling rules, and no-op service behavior over adding new scope.
 - The 80% target applies to business-logic layers rather than SwiftUI view rendering internals.
+- Release-phase validation must also cover:
+  - Release configuration compilation without product-source warnings
+  - model/bootstrap safety for SwiftData startup paths
+  - repository behavior that can differ between Debug and Release compilation
 
 ## Pages Validation
 

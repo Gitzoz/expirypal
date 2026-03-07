@@ -9,8 +9,10 @@ enum DashboardSegment {
 enum DashboardSegmentation {
     static func segment(for expiryDate: Date, now: Date, calendar: Calendar) -> DashboardSegment {
         let startOfToday = calendar.startOfDay(for: now)
-        let startOfTomorrow = calendar.date(byAdding: .day, value: 1, to: startOfToday)!
-        let startOfDay4 = calendar.date(byAdding: .day, value: 4, to: startOfToday)!
+        guard let startOfTomorrow = calendar.date(byAdding: .day, value: 1, to: startOfToday),
+              let startOfDay4 = calendar.date(byAdding: .day, value: 4, to: startOfToday) else {
+            return .today
+        }
 
         if expiryDate < startOfToday {
             return .today
