@@ -1,237 +1,234 @@
 # .codex/WORKFLOW.md
-# ExpiryPal Codex Workflow
+# ExpiryPal Execution Workflow
 Status: Authoritative
-Scope: All AI agents and contributors working in this repository
+Scope: All agents and contributors working in this repository
 
-This document defines how work is performed in the ExpiryPal repository.
+This file defines how work is executed in ExpiryPal.
+If workflow conflicts with `AGENTS.md` or the specification, the higher-authority document wins.
 
-It enforces coordination while maintaining strict compliance with:
-- AGENTS.md
-- docs/spec/ExpiryPalSpec.md
-- .codex/ARCHITECTURE_GUARDS.md
-
-If any workflow step conflicts with AGENTS.md or the specification, the specification takes precedence.
-
-----------------------------------------------------------------
+---
 
 ## 1. Operating Principles
 
 - Optimize for correctness and compliance over speed.
-- Enforce strict v1 scope control; refuse non-goal requests.
-- Keep architecture deterministic and testable.
-- Preserve privacy guarantees (local-only, no tracking/analytics/SDKs).
+- Use the smallest compliant change, not the most elaborate one.
+- Keep role boundaries explicit.
+- Prefer evidence over intent.
+- For non-trivial tasks, operate as a 5-role team.
 
-----------------------------------------------------------------
+---
 
-## 2. Mandatory Change Protocol (Hard Gate)
+## 2. Mandatory Change Protocol
 
-Every change must follow this order. No exceptions.
+Every change follows this order.
 
-1) Read relevant spec sections
-   - AGENTS.md
-   - docs/spec/ExpiryPalSpec.md
-   - .codex/ARCHITECTURE_GUARDS.md
+1. Read the required authority docs.
+2. Confirm scope before implementation.
+3. Update documentation first.
+4. Add or update tests when behavior changes.
+5. Implement code.
+6. Run validation.
+7. Update `CHANGELOG.md` when behavior or release state changed.
 
-2) Confirm scope
-   - If the task implies any NON-GOALS: refuse, cite “NON-GOALS (HARD BLOCK FOR V1)”, stop.
+No skipping and no reordering.
 
-3) Update docs (docs-first)
-   - Update the relevant doc(s) before code:
-     - docs/features/
-     - docs/architecture.md
-     - docs/data-model.md
-     - docs/notifications.md
-     - docs/testing.md
-     - docs/decisions/ (ADR when required)
+---
 
-4) Add or update tests (tests-before-logic)
-   - Add/update XCTest unit tests for logic changes.
-   - Add/update XCTest UI tests for user flows and localization.
+## 3. Task Modes
 
-5) Implement code
-   - Follow MVVM + Repository + Services boundaries.
-   - Use dependency injection via initializer only.
-   - No hardcoded UI strings (I18n rules).
+### 3.1 Minor Task
+Use when:
+- the change is small
+- there is no architecture ambiguity
+- there is no cross-layer design work
+- there is no release risk
 
-6) Run tests locally
-   - scripts/test.sh must pass.
+Default mode:
+- single thread
+- explicit reviewer pass before finalizing
 
-7) Update CHANGELOG
-   - Required for any user-visible behavior change.
-   - Optional for pure refactors (unless otherwise specified by spec/docs).
+### 3.2 Standard Task
+Use when:
+- the change affects a normal feature slice or bug fix
+- docs, tests, and code all need attention
+- multiple roles need input but the write set is still coherent
 
-----------------------------------------------------------------
+Default mode:
+- 5-role collaboration in one working thread or one worktree
 
-## 3. Role System (Execution Contexts)
+### 3.3 Cross-Cutting Task
+Use when:
+- the change touches multiple layers or subsystems
+- architecture, persistence, tests, and release validation all matter
 
-Roles are operational responsibilities, not permanent assignments.
-Agents may switch roles within a task.
+Default mode:
+- 5-role collaboration
+- use separate worktrees only if write ownership is cleanly disjoint
 
-### 3.1 Spec Guardian (Authority: Highest)
-Responsibilities:
-- Enforce AGENTS.md and docs/spec/ExpiryPalSpec.md.
-- Block scope violations (NON-GOALS).
-- Validate privacy guarantees and allowed tech stack.
-- Verify repo structure and required files.
+### 3.4 Release-Critical Task
+Use when:
+- the task affects build stability
+- project structure changes
+- persistence safety changes
+- notifications, localization, privacy, or screenshots are involved
+- the user asks for release, audit, stability, TestFlight, or App Store work
 
-Stop conditions:
-- Any scope violation
-- Any forbidden dependency/framework/SDK
-- Any privacy regression
+Default mode:
+- activate `.codex/RELEASE_MODE.md`
+- reviewer / release engineer is the final gate
 
-### 3.2 Architecture Engineer
-Responsibilities:
-- Enforce MVVM + Repository + Services separation.
-- Enforce DI (initializer injection) and no global mutable state.
-- Own ADRs for architecture/tooling changes.
-- Ensure Clock abstraction is used for time-dependent logic.
+---
 
-Triggers:
-- Changes touching Models/Data/Services/ViewModels
-- Notification scheduling system
-- Date segmentation logic
-- AppSettings semantics
+## 4. Five Roles
 
-### 3.3 iOS Feature Engineer
-Responsibilities:
-- Implement SwiftUI Views and ViewModels for allowed features.
-- Ensure Views are UI-only and call ViewModel actions.
-- Ensure localization is complete for user-facing strings.
+### 4.1 Spec Guardian
+Responsibility:
+- enforce `AGENTS.md` and `docs/spec/ExpiryPalSpec.md`
+- block scope drift
+- state what is in scope and what is explicitly untouched
 
-### 3.4 Persistence Engineer
-Responsibilities:
-- SwiftData Models and Repository implementations.
-- Queries, sorting, invariants.
-- Exactly-one AppSettings record rule.
+Required output for non-trivial tasks:
+- scope contract
+- non-goals check
+- stop conditions
 
-Owns:
-- ExpiryPal/Models
-- ExpiryPal/Data
+### 4.2 Architect
+Responsibility:
+- enforce `.codex/ARCHITECTURE_GUARDS.md`
+- define allowed dependency path and forbidden shortcuts
+- decide whether an ADR is required
 
-### 3.5 Notification Systems Engineer
-Responsibilities:
-- Local notification scheduling, cancellation, rescheduling rules.
-- Stable identifier scheme.
-- Localization of notification content.
+Required output for non-trivial tasks:
+- architecture note
+- file-level boundary guidance
+- risks to avoid
 
-Owns:
-- ExpiryPal/Services (notification-related)
-- docs/notifications.md
+### 4.3 iOS Engineer
+Responsibility:
+- execute the change within approved scope and boundaries
+- follow docs -> tests -> code -> validation
+- keep implementation minimal and compliant
 
-### 3.6 Localization Engineer
-Responsibilities:
-- Enforce: no hardcoded UI strings.
-- Maintain en/de parity for every localization key.
-- Ensure at least one UI test runs under German locale and proves no English fallback.
+Required output:
+- changed docs list
+- changed tests list
+- changed code paths
+- validation run summary
 
-Owns:
-- ExpiryPal/Resources/en.lproj/Localizable.strings
-- ExpiryPal/Resources/de.lproj/Localizable.strings
+### 4.4 QA Engineer
+Responsibility:
+- define what evidence is required before code is considered safe
+- maintain test discipline
+- classify failures correctly as product, test, or environment issues
 
-### 3.7 QA & Test Engineer
-Responsibilities:
-- Maintain XCTest unit test coverage for logic layers (target >= 80%).
-- Maintain UI tests for required flows and German localization scenario.
-- Prevent fabricated tests; tests must exercise real behavior.
+Required output for non-trivial tasks:
+- required test list
+- likely regression list
+- validation result summary
 
-Owns:
-- ExpiryPalTests
-- ExpiryPalUITests
+### 4.5 Reviewer / Release Engineer
+Responsibility:
+- review adversarially
+- block weak, under-tested, or out-of-scope changes
+- own release-facing readiness
 
-### 3.8 Documentation Steward
-Responsibilities:
-- Enforce docs-first protocol.
-- Update feature docs and reference docs.
-- Ensure docs and implementation match.
-- Update CHANGELOG for user-visible changes.
+Required output:
+- findings first
+- go / no-go decision
+- residual risk summary
 
-Owns:
-- docs/
-- CHANGELOG
+Reviewer must not be the primary implementer for a non-trivial task.
 
-----------------------------------------------------------------
+---
 
-## 4. Multi-Agent Collaboration Model
+## 5. Mandatory Handoffs
 
-For non-trivial work, split responsibilities across roles/threads:
+For any standard, cross-cutting, or release-critical task:
 
-1) Spec Guardian: validate scope + constraints
-2) Architecture Engineer: define compliant approach + any ADR need
-3) Feature Engineer: implement UI + ViewModels
-4) Persistence Engineer: update repositories/models as needed
-5) Notification Engineer: update scheduling/content rules as needed
-6) Localization Engineer: add/validate en+de keys and UI tests
-7) QA Engineer: add/maintain unit+UI tests; ensure coverage expectations
-8) Documentation Steward: finalize docs + changelog
+1. Spec Guardian produces the scope contract.
+2. Architect produces the architecture note.
+3. QA Engineer defines the required evidence.
+4. iOS Engineer performs the change.
+5. Reviewer / Release Engineer performs the final blocking review.
 
-Small tasks may be done by one agent, but must still pass all gates.
+If any handoff is missing, the task is not done.
 
-----------------------------------------------------------------
+---
 
-## 5. Isolation and Branching
+## 6. Multi-Agent And Worktree Rules
 
-Preferred: Git worktrees (one per agent thread).
-Fallback: dedicated branches.
+Use one working thread when:
+- the task is minor
+- multiple agents would touch the same files
+- coordination cost is higher than the task itself
 
-Branch naming:
-- codex/<area>/<short-description>
+Use multiple agents in one worktree when:
+- the task is standard
+- parallel thinking helps
+- only one role is doing most of the editing
 
+Use separate worktrees when:
+- the task is cross-cutting or release-critical
+- write ownership is disjoint
+- interfaces are already understood
+
+Recommended worktree ownership:
+- iOS Engineer: `ExpiryPal/App`, `ExpiryPal/ViewModels`, `ExpiryPal/Views`
+- Architect or implementation support: `ExpiryPal/Data`, `ExpiryPal/Models`, `ExpiryPal/Services`
+- QA Engineer: `ExpiryPalTests`, `ExpiryPalUITests`, validation scripts
+- Reviewer / Release Engineer: release docs, changelog, release assets, final validation notes
+
+---
+
+## 7. Validation Rules
+
+Default validation:
+- run the relevant tests for the change
+- run `scripts/test.sh` for any substantial code change
+
+Release-critical validation:
+- follow `.codex/RELEASE_MODE.md`
+
+Environment failures must be called out explicitly.
+Do not mislabel simulator or toolchain instability as a product defect.
+
+---
+
+## 8. Reviewer Rules
+
+The reviewer must:
+- start with findings, not summary
+- review the actual diff, not just the plan
+- block on scope, architecture, localization, test, privacy, and release-gate failures
+- use `.codex/REVIEW_CHECKLIST.md`
+
+The reviewer may say:
+- no-go: scope mismatch
+- no-go: boundary violation
+- no-go: insufficient test evidence
+- no-go: release risk not contained
+
+---
+
+## 9. Concurrency Limits
+
+Do not run simulator-driving jobs concurrently against the same simulator.
 Examples:
-- codex/feature/add-item
-- codex/tests/date-segmentation
-- codex/i18n/settings-strings
-- codex/notifications/idempotent-reschedule
+- UI tests
+- screenshot-scene tests
+- automated screenshot exports
 
-----------------------------------------------------------------
+Release-mode QA work must serialize those jobs.
 
-## 6. Review Gate Checklist (Pre-Merge)
+---
 
-Scope:
-- No NON-GOALS features.
-- No backend, analytics, tracking, ads, or third-party SDKs.
+## 10. Stop And Escalate
 
-Architecture:
-- Views do not access SwiftData or system APIs.
-- ViewModels do not access SwiftData directly.
-- Repositories contain persistence only (no UI logic).
-- Services contain system API logic only (no persistence).
-- DI via initializer; no global mutable state; no custom singletons.
+Stop and escalate when:
+- scope is ambiguous
+- docs and code disagree materially
+- architecture boundaries are unclear
+- release validation is flaky and root cause is unknown
+- a requested change implies a non-goal or new product scope
 
-Localization:
-- No hardcoded user-facing strings.
-- Every new key exists in both en and de files.
-- German UI test passes and shows German strings (no English fallback).
-
-Notifications:
-- Stable identifiers preserved.
-- Cancel-before-schedule, idempotent.
-- Skip past triggers.
-- Cancel/reschedule rules enforced.
-- Notification content localized.
-
-Quality:
-- scripts/test.sh passes.
-- No build warnings.
-- No dead code.
-- Docs updated (and match behavior).
-- CHANGELOG updated when user-visible behavior changed.
-
-----------------------------------------------------------------
-
-## 7. Commands
-
-Run tests:
-- scripts/test.sh
-
-Any additional scripts must be deterministic and dependency-minimal.
-
-----------------------------------------------------------------
-
-## 8. Stop-and-Escalate Rules
-
-If uncertain about scope, invariants, date segmentation, notification rules, or i18n:
-- Stop implementation.
-- Consult AGENTS.md and docs/spec/ExpiryPalSpec.md.
-- Propose the smallest compliant option or require a docs/spec update first.
-
-No speculative behavior.
+Do not guess. Use the smallest compliant interpretation or require a specification update.

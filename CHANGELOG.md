@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Slimmed the repository constitution, rewrote the Codex workflow around an explicit 5-role operating model, and added dedicated review and release-mode playbooks for stricter process enforcement.
 - Hardened SwiftData bootstrap and model safety for release preparation by using an explicit persistent-store location, safer model normalization, and a Release-safe item lookup path.
 - Added direct model tests for `FoodItem`, enabled scheme code coverage reporting, and expanded repository coverage for item lookup behavior.
 - Added an app privacy manifest (`PrivacyInfo.xcprivacy`) and release checklist/privacy documentation updates for App Store submission.
