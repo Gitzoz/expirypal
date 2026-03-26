@@ -20,7 +20,6 @@
 		A0000001000000000000000B /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000B /* DashboardViewModel.swift */; };
 		A0000001000000000000000C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000C /* DashboardView.swift */; };
 		A0000001000000000000000D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00000120000000000000001 /* Localizable.strings */; };
-		A00000010000000000000036 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000035 /* PrivacyInfo.xcprivacy */; };
 		A0000001000000000000000E /* SwiftDataFoodItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000E /* SwiftDataFoodItemRepository.swift */; };
 		A0000001000000000000000F /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000F /* AddItemViewModel.swift */; };
 		A00000010000000000000010 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000010 /* AddItemView.swift */; };
@@ -57,6 +56,7 @@
 		A00000010000000000000032 /* EditItemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000032 /* EditItemUITests.swift */; };
 		A00000010000000000000033 /* ArchiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000033 /* ArchiveUITests.swift */; };
 		A00000010000000000000034 /* SettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000034 /* SettingsUITests.swift */; };
+		A00000010000000000000036 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000035 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +126,6 @@
 		A00000110000000000000033 /* ArchiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUITests.swift; sourceTree = "<group>"; };
 		A00000110000000000000034 /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
 		A00000110000000000000035 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		A00000120000000000000001 /* Localizable.strings */ = {isa = PBXVariantGroup; children = (A00000120000000000000002 /* en */, A00000120000000000000003 /* de */, ); name = Localizable.strings; sourceTree = "<group>"; };
 		A00000120000000000000002 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A00000120000000000000003 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A00000130000000000000001 /* ExpiryPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpiryPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,9 +134,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A00000500000000000000001 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		A00000500000000000000002 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		A00000500000000000000003 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A00000500000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000500000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000500000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -166,14 +183,93 @@
 			path = ExpiryPal;
 			sourceTree = "<group>";
 		};
-		A00000600000000000000003 /* App */ = {isa = PBXGroup; children = (A00000110000000000000001 /* AppContainer.swift */, A00000110000000000000002 /* ExpiryPalApp.swift */, ); path = App; sourceTree = "<group>"; };
-		A00000600000000000000004 /* Data */ = {isa = PBXGroup; children = (A00000110000000000000003 /* FoodItemRepository.swift */, A00000110000000000000004 /* InMemoryFoodItemRepository.swift */, A0000011000000000000000E /* SwiftDataFoodItemRepository.swift */, A00000110000000000000012 /* AppSettingsRepository.swift */, A00000110000000000000013 /* SwiftDataAppSettingsRepository.swift */, ); path = Data; sourceTree = "<group>"; };
-		A00000600000000000000005 /* Models */ = {isa = PBXGroup; children = (A00000110000000000000005 /* FoodItem.swift */, A00000110000000000000006 /* ItemStatus.swift */, A00000110000000000000007 /* StorageLocation.swift */, A00000110000000000000011 /* AppSettings.swift */, ); path = Models; sourceTree = "<group>"; };
-		A00000600000000000000006 /* Services */ = {isa = PBXGroup; children = (A00000110000000000000008 /* Clock.swift */, A00000110000000000000009 /* SystemClock.swift */, A00000110000000000000014 /* UserNotificationCenterProtocol.swift */, A00000110000000000000015 /* NotificationSchedulingService.swift */, A00000110000000000000016 /* NoOpNotificationSchedulingService.swift */, A00000110000000000000017 /* LocalNotificationSchedulingService.swift */, ); path = Services; sourceTree = "<group>"; };
-		A00000600000000000000007 /* Utilities */ = {isa = PBXGroup; children = (A0000011000000000000000A /* DashboardSegmentation.swift */, ); path = Utilities; sourceTree = "<group>"; };
-		A00000600000000000000008 /* ViewModels */ = {isa = PBXGroup; children = (A0000011000000000000000B /* DashboardViewModel.swift */, A0000011000000000000000F /* AddItemViewModel.swift */, A00000110000000000000018 /* ArchiveViewModel.swift */, A00000110000000000000019 /* EditItemViewModel.swift */, A0000011000000000000001A /* SettingsViewModel.swift */, ); path = ViewModels; sourceTree = "<group>"; };
-		A00000600000000000000009 /* Views */ = {isa = PBXGroup; children = (A0000011000000000000000C /* DashboardView.swift */, A00000110000000000000010 /* AddItemView.swift */, A0000011000000000000001B /* EditItemView.swift */, A0000011000000000000001C /* ArchiveView.swift */, A0000011000000000000001D /* SettingsView.swift */, A0000011000000000000001E /* RootTabView.swift */, ); path = Views; sourceTree = "<group>"; };
-		A0000060000000000000000A /* Resources */ = {isa = PBXGroup; children = (A00000120000000000000001 /* Localizable.strings */, A00000110000000000000035 /* PrivacyInfo.xcprivacy */, ); path = Resources; sourceTree = "<group>"; };
+		A00000600000000000000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000001 /* AppContainer.swift */,
+				A00000110000000000000002 /* ExpiryPalApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000004 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000003 /* FoodItemRepository.swift */,
+				A00000110000000000000004 /* InMemoryFoodItemRepository.swift */,
+				A0000011000000000000000E /* SwiftDataFoodItemRepository.swift */,
+				A00000110000000000000012 /* AppSettingsRepository.swift */,
+				A00000110000000000000013 /* SwiftDataAppSettingsRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000005 /* FoodItem.swift */,
+				A00000110000000000000006 /* ItemStatus.swift */,
+				A00000110000000000000007 /* StorageLocation.swift */,
+				A00000110000000000000011 /* AppSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000006 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000008 /* Clock.swift */,
+				A00000110000000000000009 /* SystemClock.swift */,
+				A00000110000000000000014 /* UserNotificationCenterProtocol.swift */,
+				A00000110000000000000015 /* NotificationSchedulingService.swift */,
+				A00000110000000000000016 /* NoOpNotificationSchedulingService.swift */,
+				A00000110000000000000017 /* LocalNotificationSchedulingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000007 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A0000011000000000000000A /* DashboardSegmentation.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000008 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A0000011000000000000000B /* DashboardViewModel.swift */,
+				A0000011000000000000000F /* AddItemViewModel.swift */,
+				A00000110000000000000018 /* ArchiveViewModel.swift */,
+				A00000110000000000000019 /* EditItemViewModel.swift */,
+				A0000011000000000000001A /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0000011000000000000000C /* DashboardView.swift */,
+				A00000110000000000000010 /* AddItemView.swift */,
+				A0000011000000000000001B /* EditItemView.swift */,
+				A0000011000000000000001C /* ArchiveView.swift */,
+				A0000011000000000000001D /* SettingsView.swift */,
+				A0000011000000000000001E /* RootTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0000060000000000000000A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A00000120000000000000001 /* Localizable.strings */,
+				A00000110000000000000035 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A00000600000000000000010 /* ExpiryPalTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,9 +287,40 @@
 			path = ExpiryPalTests;
 			sourceTree = "<group>";
 		};
-		A00000600000000000000011 /* ExpiryPalUITests */ = {isa = PBXGroup; children = (A00000110000000000000031 /* AddItemUITests.swift */, A00000110000000000000033 /* ArchiveUITests.swift */, A00000110000000000000032 /* EditItemUITests.swift */, A00000110000000000000030 /* GermanLocalizationUITests.swift */, A00000110000000000000034 /* SettingsUITests.swift */, ); path = ExpiryPalUITests; sourceTree = "<group>"; };
-		A00000600000000000000012 /* TestDoubles */ = {isa = PBXGroup; children = (A00000110000000000000026 /* InMemoryAppSettingsRepository.swift */, A00000110000000000000022 /* InMemoryFoodItemRepository.swift */, A00000110000000000000027 /* NotificationSchedulingServiceSpy.swift */, A00000110000000000000023 /* TestClock.swift */, A00000110000000000000028 /* UserNotificationCenterSpy.swift */, ); path = TestDoubles; sourceTree = "<group>"; };
-		A00000600000000000000020 /* Products */ = {isa = PBXGroup; children = (A00000130000000000000001 /* ExpiryPal.app */, A00000130000000000000002 /* ExpiryPalTests.xctest */, A00000130000000000000003 /* ExpiryPalUITests.xctest */, ); name = Products; sourceTree = "<group>"; };
+		A00000600000000000000011 /* ExpiryPalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000031 /* AddItemUITests.swift */,
+				A00000110000000000000033 /* ArchiveUITests.swift */,
+				A00000110000000000000032 /* EditItemUITests.swift */,
+				A00000110000000000000030 /* GermanLocalizationUITests.swift */,
+				A00000110000000000000034 /* SettingsUITests.swift */,
+			);
+			path = ExpiryPalUITests;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000012 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000026 /* InMemoryAppSettingsRepository.swift */,
+				A00000110000000000000022 /* InMemoryFoodItemRepository.swift */,
+				A00000110000000000000027 /* NotificationSchedulingServiceSpy.swift */,
+				A00000110000000000000023 /* TestClock.swift */,
+				A00000110000000000000028 /* UserNotificationCenterSpy.swift */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000020 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A00000130000000000000001 /* ExpiryPal.app */,
+				A00000130000000000000002 /* ExpiryPalTests.xctest */,
+				A00000130000000000000003 /* ExpiryPalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,8 +332,10 @@
 				A00000500000000000000001 /* Frameworks */,
 				A00000900000000000000001 /* Resources */,
 			);
-			buildRules = ();
-			dependencies = ();
+			buildRules = (
+			);
+			dependencies = (
+			);
 			name = ExpiryPal;
 			productName = ExpiryPal;
 			productReference = A00000130000000000000001 /* ExpiryPal.app */;
@@ -220,7 +349,8 @@
 				A00000500000000000000002 /* Frameworks */,
 				A00000900000000000000002 /* Resources */,
 			);
-			buildRules = ();
+			buildRules = (
+			);
 			dependencies = (
 				A00000A00000000000000001 /* PBXTargetDependency */,
 			);
@@ -237,7 +367,8 @@
 				A00000500000000000000003 /* Frameworks */,
 				A00000900000000000000003 /* Resources */,
 			);
-			buildRules = ();
+			buildRules = (
+			);
 			dependencies = (
 				A00000A00000000000000002 /* PBXTargetDependency */,
 			);
@@ -254,7 +385,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					A00000400000000000000002 = {
 						TestTargetID = A00000400000000000000001;
@@ -298,13 +429,15 @@
 		A00000900000000000000002 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
-			files = ();
+			files = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A00000900000000000000003 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
-			files = ();
+			files = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
@@ -394,20 +527,51 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		A00000120000000000000001 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A00000120000000000000002 /* en */,
+				A00000120000000000000003 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		A00000B00000000000000000 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -416,10 +580,17 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -429,14 +600,40 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -444,7 +641,8 @@
 		};
 		A00000B00000000000000010 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {				CODE_SIGN_STYLE = Automatic;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -453,7 +651,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", );
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.expirypal.app;
@@ -467,7 +668,8 @@
 		};
 		A00000B00000000000000011 /* Release */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {				CODE_SIGN_STYLE = Automatic;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -475,7 +677,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", );
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.expirypal.app;
@@ -496,7 +701,11 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks", );
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.expirypal.app.tests;
@@ -518,7 +727,11 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks", );
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.expirypal.app.tests;
@@ -539,7 +752,11 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks", );
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.expirypal.app.uitests;
@@ -560,7 +777,11 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks", );
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.expirypal.app.uitests;
