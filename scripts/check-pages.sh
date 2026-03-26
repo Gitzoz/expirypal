@@ -10,6 +10,8 @@ required_files=(
   "$SITE_DIR/privacy.html"
   "$SITE_DIR/roadmap.html"
   "$SITE_DIR/styles.css"
+  "$SITE_DIR/robots.txt"
+  "$SITE_DIR/sitemap.xml"
 )
 
 for file in "${required_files[@]}"; do
@@ -26,8 +28,20 @@ for href in "href=\"index.html\"" "href=\"docs.html\"" "href=\"privacy.html\"" "
   fi
 done
 
-if rg -n "<script|gtag\\(|googletagmanager|plausible\\.|segment\\.com|mixpanel|hotjar" "$SITE_DIR"; then
-  echo "Disallowed script or analytics reference found in docs/site"
+if rg -n \
+  -e 'gtag\(' \
+  -e 'googletagmanager' \
+  -e 'plausible\.' \
+  -e 'segment\.com' \
+  -e 'mixpanel' \
+  -e 'hotjar' \
+  "$SITE_DIR"; then
+  echo "Disallowed analytics reference found in docs/site"
+  exit 1
+fi
+
+if rg -n "<script" "$SITE_DIR" | rg -v 'type="application/ld\+json"' >/dev/null; then
+  echo "Disallowed executable script reference found in docs/site"
   exit 1
 fi
 
@@ -35,5 +49,12 @@ if rg -n 'src=["'\'']https?://|url\(https?://|<img[^>]+src=["'\'']https?://' "$S
   echo "Disallowed remote asset reference found in docs/site"
   exit 1
 fi
+
+for pattern in 'rel="canonical"' 'property="og:title"' 'name="twitter:card"'; do
+  if ! rg -q "$pattern" "$SITE_DIR"/index.html "$SITE_DIR"/docs.html "$SITE_DIR"/privacy.html "$SITE_DIR"/roadmap.html; then
+    echo "Missing expected SEO/social metadata pattern: $pattern"
+    exit 1
+  fi
+done
 
 echo "GitHub Pages site checks passed."

@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Finalized App Store metadata URLs, added a copy-paste App Store Connect checklist, and upgraded the public Pages site with canonical, social preview, robots, and sitemap metadata.
 - Slimmed the repository constitution, rewrote the Codex workflow around an explicit 5-role operating model, and added dedicated review and release-mode playbooks for stricter process enforcement.
 - Hardened SwiftData bootstrap and model safety for release preparation by using an explicit persistent-store location, safer model normalization, and a Release-safe item lookup path.
 - Added direct model tests for `FoodItem`, enabled scheme code coverage reporting, and expanded repository coverage for item lookup behavior.

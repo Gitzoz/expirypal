@@ -4,10 +4,10 @@
 ExpiryPal
 
 ## Subtitle
-Track food expiry dates locally
+Food Expiry Tracker
 
 ## Promotional Summary
-Privacy-first food expiry tracking with local reminders, no accounts, and no analytics.
+Track expiry dates, reduce food waste, and get local reminders. No account, no ads, no tracking.
 
 ## Short Description
 ExpiryPal helps you track food expiry dates with a focused dashboard, simple item editing, archive support, and local notifications.
@@ -32,14 +32,20 @@ ExpiryPal is intentionally small:
 
 Your data stays on your device. Notifications are scheduled locally.
 
+ExpiryPal is a one-time purchase:
+- no subscription
+- no upsells
+- no locked premium tier
+- one focused app with the full feature set included
+
 ## Keywords
-food expiry, pantry, fridge, freezer, reminders, food waste, local notifications, inventory
+food expiry, food waste, expiry tracker, kitchen tracker, food reminder, pantry, fridge, freezer
 
 ## Support URL
-GitHub repository or project website URL
+https://github.com/Gitzoz/expirypal
 
 ## Marketing URL
-GitHub Pages site URL
+https://gitzoz.github.io/expirypal/
 
 ## Privacy Policy URL
-Repository privacy document or published Pages privacy URL
+https://gitzoz.github.io/expirypal/privacy.html

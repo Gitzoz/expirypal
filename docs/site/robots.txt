@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gitzoz.github.io/expirypal/sitemap.xml

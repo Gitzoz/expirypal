@@ -34,6 +34,7 @@ Current work is limited to release preparation, polish, and documentation.
 
 - Release docs index: `docs/release/README.md`
 - App Store copy draft: `docs/release/app-store-copy.md`
+- App Store Connect checklist: `docs/release/app-store-connect-checklist.md`
 - Asset checklist: `docs/release/assets.md`
 - Release checklist: `docs/release/checklist.md`
 

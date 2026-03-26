@@ -4,6 +4,7 @@ Release preparation for ExpiryPal is documentation-driven.
 
 Contents:
 - [App Store Copy](app-store-copy.md)
+- [App Store Connect Checklist](app-store-connect-checklist.md)
 - [Asset Checklist](assets.md)
 - [Release Checklist](checklist.md)
 
