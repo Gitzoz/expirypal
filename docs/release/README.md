@@ -1,6 +1,6 @@
 # Release Docs
 
-Release preparation for ExpiryPal is documentation-driven.
+Release preparation for ExpiryCue is documentation-driven.
 
 Contents:
 - [App Store Copy](app-store-copy.md)

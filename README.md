@@ -1,6 +1,6 @@
-# ExpiryPal
+# ExpiryCue
 
-ExpiryPal is a minimalist, privacy-first iOS app that helps users track food expiry dates with local notifications.
+ExpiryCue is a minimalist, privacy-first iOS app that helps users track food expiry dates with local notifications.
 
 ## Public Docs
 

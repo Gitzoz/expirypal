@@ -1,6 +1,6 @@
 # Notifications
 
-ExpiryPal uses local notifications only.
+ExpiryCue uses local notifications only.
 
 Stable identifiers:
 - fooditem.<UUID>.d3

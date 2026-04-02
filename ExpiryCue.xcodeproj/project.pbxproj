@@ -1,0 +1,834 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A00000010000000000000001 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000001 /* AppContainer.swift */; };
+		A00000010000000000000002 /* ExpiryCueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000002 /* ExpiryCueApp.swift */; };
+		A00000010000000000000003 /* FoodItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000003 /* FoodItemRepository.swift */; };
+		A00000010000000000000004 /* InMemoryFoodItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000004 /* InMemoryFoodItemRepository.swift */; };
+		A00000010000000000000005 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000005 /* FoodItem.swift */; };
+		A00000010000000000000006 /* ItemStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000006 /* ItemStatus.swift */; };
+		A00000010000000000000007 /* StorageLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000007 /* StorageLocation.swift */; };
+		A00000010000000000000008 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000008 /* Clock.swift */; };
+		A00000010000000000000009 /* SystemClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000009 /* SystemClock.swift */; };
+		A0000001000000000000000A /* DashboardSegmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000A /* DashboardSegmentation.swift */; };
+		A0000001000000000000000B /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000B /* DashboardViewModel.swift */; };
+		A0000001000000000000000C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000C /* DashboardView.swift */; };
+		A0000001000000000000000D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00000120000000000000001 /* Localizable.strings */; };
+		A0000001000000000000000E /* SwiftDataFoodItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000E /* SwiftDataFoodItemRepository.swift */; };
+		A0000001000000000000000F /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000000F /* AddItemViewModel.swift */; };
+		A00000010000000000000010 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000010 /* AddItemView.swift */; };
+		A00000010000000000000011 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000011 /* AppSettings.swift */; };
+		A00000010000000000000012 /* AppSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000012 /* AppSettingsRepository.swift */; };
+		A00000010000000000000013 /* SwiftDataAppSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000013 /* SwiftDataAppSettingsRepository.swift */; };
+		A00000010000000000000014 /* UserNotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000014 /* UserNotificationCenterProtocol.swift */; };
+		A00000010000000000000015 /* NotificationSchedulingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000015 /* NotificationSchedulingService.swift */; };
+		A00000010000000000000016 /* NoOpNotificationSchedulingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000016 /* NoOpNotificationSchedulingService.swift */; };
+		A00000010000000000000017 /* LocalNotificationSchedulingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000017 /* LocalNotificationSchedulingService.swift */; };
+		A00000010000000000000018 /* ArchiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000018 /* ArchiveViewModel.swift */; };
+		A00000010000000000000019 /* EditItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000019 /* EditItemViewModel.swift */; };
+		A0000001000000000000001A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000001A /* SettingsViewModel.swift */; };
+		A0000001000000000000001B /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000001B /* EditItemView.swift */; };
+		A0000001000000000000001C /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000001C /* ArchiveView.swift */; };
+		A0000001000000000000001D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000001D /* SettingsView.swift */; };
+		A0000001000000000000001E /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000001E /* RootTabView.swift */; };
+		A00000010000000000000020 /* DashboardSegmentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000020 /* DashboardSegmentationTests.swift */; };
+		A00000010000000000000021 /* LocalizationParityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000021 /* LocalizationParityTests.swift */; };
+		A00000010000000000000022 /* InMemoryFoodItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000022 /* InMemoryFoodItemRepository.swift */; };
+		A00000010000000000000023 /* TestClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000023 /* TestClock.swift */; };
+		A00000010000000000000024 /* AddItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000024 /* AddItemViewModelTests.swift */; };
+		A00000010000000000000025 /* FoodItemRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000025 /* FoodItemRepositoryTests.swift */; };
+		A00000010000000000000026 /* InMemoryAppSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000026 /* InMemoryAppSettingsRepository.swift */; };
+		A00000010000000000000027 /* NotificationSchedulingServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000027 /* NotificationSchedulingServiceSpy.swift */; };
+		A00000010000000000000028 /* UserNotificationCenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000028 /* UserNotificationCenterSpy.swift */; };
+		A00000010000000000000029 /* EditItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000029 /* EditItemViewModelTests.swift */; };
+		A0000001000000000000002A /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000002A /* SettingsViewModelTests.swift */; };
+		A0000001000000000000002B /* AppSettingsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000002B /* AppSettingsRepositoryTests.swift */; };
+		A0000001000000000000002C /* NotificationSchedulingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000002C /* NotificationSchedulingServiceTests.swift */; };
+		A0000001000000000000002D /* FoodItemModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000011000000000000002D /* FoodItemModelTests.swift */; };
+		A00000010000000000000030 /* GermanLocalizationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000030 /* GermanLocalizationUITests.swift */; };
+		A00000010000000000000031 /* AddItemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000031 /* AddItemUITests.swift */; };
+		A00000010000000000000032 /* EditItemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000032 /* EditItemUITests.swift */; };
+		A00000010000000000000033 /* ArchiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000033 /* ArchiveUITests.swift */; };
+		A00000010000000000000034 /* SettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000034 /* SettingsUITests.swift */; };
+		A00000010000000000000036 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A00000110000000000000035 /* PrivacyInfo.xcprivacy */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A00000200000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A00000300000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00000400000000000000001;
+			remoteInfo = ExpiryCue;
+		};
+		A00000200000000000000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A00000300000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00000400000000000000001;
+			remoteInfo = ExpiryCue;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A00000110000000000000001 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		A00000110000000000000002 /* ExpiryCueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiryCueApp.swift; sourceTree = "<group>"; };
+		A00000110000000000000003 /* FoodItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemRepository.swift; sourceTree = "<group>"; };
+		A00000110000000000000004 /* InMemoryFoodItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFoodItemRepository.swift; sourceTree = "<group>"; };
+		A00000110000000000000005 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		A00000110000000000000006 /* ItemStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStatus.swift; sourceTree = "<group>"; };
+		A00000110000000000000007 /* StorageLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLocation.swift; sourceTree = "<group>"; };
+		A00000110000000000000008 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		A00000110000000000000009 /* SystemClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemClock.swift; sourceTree = "<group>"; };
+		A0000011000000000000000A /* DashboardSegmentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSegmentation.swift; sourceTree = "<group>"; };
+		A0000011000000000000000B /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		A0000011000000000000000C /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		A0000011000000000000000E /* SwiftDataFoodItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataFoodItemRepository.swift; sourceTree = "<group>"; };
+		A0000011000000000000000F /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
+		A00000110000000000000010 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		A00000110000000000000011 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		A00000110000000000000012 /* AppSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsRepository.swift; sourceTree = "<group>"; };
+		A00000110000000000000013 /* SwiftDataAppSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataAppSettingsRepository.swift; sourceTree = "<group>"; };
+		A00000110000000000000014 /* UserNotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterProtocol.swift; sourceTree = "<group>"; };
+		A00000110000000000000015 /* NotificationSchedulingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSchedulingService.swift; sourceTree = "<group>"; };
+		A00000110000000000000016 /* NoOpNotificationSchedulingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoOpNotificationSchedulingService.swift; sourceTree = "<group>"; };
+		A00000110000000000000017 /* LocalNotificationSchedulingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationSchedulingService.swift; sourceTree = "<group>"; };
+		A00000110000000000000018 /* ArchiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewModel.swift; sourceTree = "<group>"; };
+		A00000110000000000000019 /* EditItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemViewModel.swift; sourceTree = "<group>"; };
+		A0000011000000000000001A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A0000011000000000000001B /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
+		A0000011000000000000001C /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
+		A0000011000000000000001D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A0000011000000000000001E /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		A00000110000000000000020 /* DashboardSegmentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSegmentationTests.swift; sourceTree = "<group>"; };
+		A00000110000000000000021 /* LocalizationParityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationParityTests.swift; sourceTree = "<group>"; };
+		A00000110000000000000022 /* InMemoryFoodItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFoodItemRepository.swift; sourceTree = "<group>"; };
+		A00000110000000000000023 /* TestClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClock.swift; sourceTree = "<group>"; };
+		A00000110000000000000024 /* AddItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModelTests.swift; sourceTree = "<group>"; };
+		A00000110000000000000025 /* FoodItemRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemRepositoryTests.swift; sourceTree = "<group>"; };
+		A00000110000000000000026 /* InMemoryAppSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryAppSettingsRepository.swift; sourceTree = "<group>"; };
+		A00000110000000000000027 /* NotificationSchedulingServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSchedulingServiceSpy.swift; sourceTree = "<group>"; };
+		A00000110000000000000028 /* UserNotificationCenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterSpy.swift; sourceTree = "<group>"; };
+		A00000110000000000000029 /* EditItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemViewModelTests.swift; sourceTree = "<group>"; };
+		A0000011000000000000002A /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelTests.swift; sourceTree = "<group>"; };
+		A0000011000000000000002B /* AppSettingsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsRepositoryTests.swift; sourceTree = "<group>"; };
+		A0000011000000000000002C /* NotificationSchedulingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSchedulingServiceTests.swift; sourceTree = "<group>"; };
+		A0000011000000000000002D /* FoodItemModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemModelTests.swift; sourceTree = "<group>"; };
+		A00000110000000000000030 /* GermanLocalizationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GermanLocalizationUITests.swift; sourceTree = "<group>"; };
+		A00000110000000000000031 /* AddItemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemUITests.swift; sourceTree = "<group>"; };
+		A00000110000000000000032 /* EditItemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemUITests.swift; sourceTree = "<group>"; };
+		A00000110000000000000033 /* ArchiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUITests.swift; sourceTree = "<group>"; };
+		A00000110000000000000034 /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
+		A00000110000000000000035 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		A00000120000000000000002 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A00000120000000000000003 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A00000130000000000000001 /* ExpiryCue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpiryCue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000130000000000000002 /* ExpiryCueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpiryCueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000130000000000000003 /* ExpiryCueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpiryCueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A00000500000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000500000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000500000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A00000600000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A00000600000000000000002 /* ExpiryCue */,
+				A00000600000000000000010 /* ExpiryCueTests */,
+				A00000600000000000000011 /* ExpiryCueUITests */,
+				A00000600000000000000020 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A00000600000000000000002 /* ExpiryCue */ = {
+			isa = PBXGroup;
+			children = (
+				A00000600000000000000003 /* App */,
+				A00000600000000000000004 /* Data */,
+				A00000600000000000000005 /* Models */,
+				A00000600000000000000006 /* Services */,
+				A00000600000000000000007 /* Utilities */,
+				A00000600000000000000008 /* ViewModels */,
+				A00000600000000000000009 /* Views */,
+				A0000060000000000000000A /* Resources */,
+			);
+			path = ExpiryCue;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000001 /* AppContainer.swift */,
+				A00000110000000000000002 /* ExpiryCueApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000004 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000003 /* FoodItemRepository.swift */,
+				A00000110000000000000004 /* InMemoryFoodItemRepository.swift */,
+				A0000011000000000000000E /* SwiftDataFoodItemRepository.swift */,
+				A00000110000000000000012 /* AppSettingsRepository.swift */,
+				A00000110000000000000013 /* SwiftDataAppSettingsRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000005 /* FoodItem.swift */,
+				A00000110000000000000006 /* ItemStatus.swift */,
+				A00000110000000000000007 /* StorageLocation.swift */,
+				A00000110000000000000011 /* AppSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000006 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000008 /* Clock.swift */,
+				A00000110000000000000009 /* SystemClock.swift */,
+				A00000110000000000000014 /* UserNotificationCenterProtocol.swift */,
+				A00000110000000000000015 /* NotificationSchedulingService.swift */,
+				A00000110000000000000016 /* NoOpNotificationSchedulingService.swift */,
+				A00000110000000000000017 /* LocalNotificationSchedulingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000007 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A0000011000000000000000A /* DashboardSegmentation.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000008 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A0000011000000000000000B /* DashboardViewModel.swift */,
+				A0000011000000000000000F /* AddItemViewModel.swift */,
+				A00000110000000000000018 /* ArchiveViewModel.swift */,
+				A00000110000000000000019 /* EditItemViewModel.swift */,
+				A0000011000000000000001A /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0000011000000000000000C /* DashboardView.swift */,
+				A00000110000000000000010 /* AddItemView.swift */,
+				A0000011000000000000001B /* EditItemView.swift */,
+				A0000011000000000000001C /* ArchiveView.swift */,
+				A0000011000000000000001D /* SettingsView.swift */,
+				A0000011000000000000001E /* RootTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0000060000000000000000A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A00000120000000000000001 /* Localizable.strings */,
+				A00000110000000000000035 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000010 /* ExpiryCueTests */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000024 /* AddItemViewModelTests.swift */,
+				A0000011000000000000002B /* AppSettingsRepositoryTests.swift */,
+				A00000110000000000000020 /* DashboardSegmentationTests.swift */,
+				A00000110000000000000029 /* EditItemViewModelTests.swift */,
+				A0000011000000000000002D /* FoodItemModelTests.swift */,
+				A00000110000000000000025 /* FoodItemRepositoryTests.swift */,
+				A00000110000000000000021 /* LocalizationParityTests.swift */,
+				A0000011000000000000002C /* NotificationSchedulingServiceTests.swift */,
+				A0000011000000000000002A /* SettingsViewModelTests.swift */,
+				A00000600000000000000012 /* TestDoubles */,
+			);
+			path = ExpiryCueTests;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000011 /* ExpiryCueUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000031 /* AddItemUITests.swift */,
+				A00000110000000000000033 /* ArchiveUITests.swift */,
+				A00000110000000000000032 /* EditItemUITests.swift */,
+				A00000110000000000000030 /* GermanLocalizationUITests.swift */,
+				A00000110000000000000034 /* SettingsUITests.swift */,
+			);
+			path = ExpiryCueUITests;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000012 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				A00000110000000000000026 /* InMemoryAppSettingsRepository.swift */,
+				A00000110000000000000022 /* InMemoryFoodItemRepository.swift */,
+				A00000110000000000000027 /* NotificationSchedulingServiceSpy.swift */,
+				A00000110000000000000023 /* TestClock.swift */,
+				A00000110000000000000028 /* UserNotificationCenterSpy.swift */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		A00000600000000000000020 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A00000130000000000000001 /* ExpiryCue.app */,
+				A00000130000000000000002 /* ExpiryCueTests.xctest */,
+				A00000130000000000000003 /* ExpiryCueUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00000400000000000000001 /* ExpiryCue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000800000000000000001 /* Build configuration list for PBXNativeTarget "ExpiryCue" */;
+			buildPhases = (
+				A00000700000000000000001 /* Sources */,
+				A00000500000000000000001 /* Frameworks */,
+				A00000900000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExpiryCue;
+			productName = ExpiryCue;
+			productReference = A00000130000000000000001 /* ExpiryCue.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A00000400000000000000002 /* ExpiryCueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000800000000000000002 /* Build configuration list for PBXNativeTarget "ExpiryCueTests" */;
+			buildPhases = (
+				A00000700000000000000002 /* Sources */,
+				A00000500000000000000002 /* Frameworks */,
+				A00000900000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A00000A00000000000000001 /* PBXTargetDependency */,
+			);
+			name = ExpiryCueTests;
+			productName = ExpiryCueTests;
+			productReference = A00000130000000000000002 /* ExpiryCueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A00000400000000000000003 /* ExpiryCueUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000800000000000000003 /* Build configuration list for PBXNativeTarget "ExpiryCueUITests" */;
+			buildPhases = (
+				A00000700000000000000003 /* Sources */,
+				A00000500000000000000003 /* Frameworks */,
+				A00000900000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A00000A00000000000000002 /* PBXTargetDependency */,
+			);
+			name = ExpiryCueUITests;
+			productName = ExpiryCueUITests;
+			productReference = A00000130000000000000003 /* ExpiryCueUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00000300000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					A00000400000000000000002 = {
+						TestTargetID = A00000400000000000000001;
+					};
+					A00000400000000000000003 = {
+						TestTargetID = A00000400000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = A00000800000000000000000 /* Build configuration list for PBXProject "ExpiryCue" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				de,
+				Base,
+			);
+			mainGroup = A00000600000000000000001;
+			productRefGroup = A00000600000000000000020 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A00000400000000000000001 /* ExpiryCue */,
+				A00000400000000000000002 /* ExpiryCueTests */,
+				A00000400000000000000003 /* ExpiryCueUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A00000900000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000001000000000000000D /* Localizable.strings in Resources */,
+				A00000010000000000000036 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000900000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000900000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A00000700000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000010000000000000001 /* AppContainer.swift in Sources */,
+				A00000010000000000000002 /* ExpiryCueApp.swift in Sources */,
+				A00000010000000000000003 /* FoodItemRepository.swift in Sources */,
+				A00000010000000000000004 /* InMemoryFoodItemRepository.swift in Sources */,
+				A00000010000000000000005 /* FoodItem.swift in Sources */,
+				A00000010000000000000006 /* ItemStatus.swift in Sources */,
+				A00000010000000000000007 /* StorageLocation.swift in Sources */,
+				A00000010000000000000008 /* Clock.swift in Sources */,
+				A00000010000000000000009 /* SystemClock.swift in Sources */,
+				A0000001000000000000000A /* DashboardSegmentation.swift in Sources */,
+				A0000001000000000000000B /* DashboardViewModel.swift in Sources */,
+				A0000001000000000000000C /* DashboardView.swift in Sources */,
+				A0000001000000000000000E /* SwiftDataFoodItemRepository.swift in Sources */,
+				A0000001000000000000000F /* AddItemViewModel.swift in Sources */,
+				A00000010000000000000010 /* AddItemView.swift in Sources */,
+				A00000010000000000000011 /* AppSettings.swift in Sources */,
+				A00000010000000000000012 /* AppSettingsRepository.swift in Sources */,
+				A00000010000000000000013 /* SwiftDataAppSettingsRepository.swift in Sources */,
+				A00000010000000000000014 /* UserNotificationCenterProtocol.swift in Sources */,
+				A00000010000000000000015 /* NotificationSchedulingService.swift in Sources */,
+				A00000010000000000000016 /* NoOpNotificationSchedulingService.swift in Sources */,
+				A00000010000000000000017 /* LocalNotificationSchedulingService.swift in Sources */,
+				A00000010000000000000018 /* ArchiveViewModel.swift in Sources */,
+				A00000010000000000000019 /* EditItemViewModel.swift in Sources */,
+				A0000001000000000000001A /* SettingsViewModel.swift in Sources */,
+				A0000001000000000000001B /* EditItemView.swift in Sources */,
+				A0000001000000000000001C /* ArchiveView.swift in Sources */,
+				A0000001000000000000001D /* SettingsView.swift in Sources */,
+				A0000001000000000000001E /* RootTabView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000700000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000010000000000000024 /* AddItemViewModelTests.swift in Sources */,
+				A0000001000000000000002B /* AppSettingsRepositoryTests.swift in Sources */,
+				A00000010000000000000020 /* DashboardSegmentationTests.swift in Sources */,
+				A00000010000000000000029 /* EditItemViewModelTests.swift in Sources */,
+				A0000001000000000000002D /* FoodItemModelTests.swift in Sources */,
+				A00000010000000000000025 /* FoodItemRepositoryTests.swift in Sources */,
+				A00000010000000000000021 /* LocalizationParityTests.swift in Sources */,
+				A0000001000000000000002C /* NotificationSchedulingServiceTests.swift in Sources */,
+				A0000001000000000000002A /* SettingsViewModelTests.swift in Sources */,
+				A00000010000000000000026 /* InMemoryAppSettingsRepository.swift in Sources */,
+				A00000010000000000000022 /* InMemoryFoodItemRepository.swift in Sources */,
+				A00000010000000000000027 /* NotificationSchedulingServiceSpy.swift in Sources */,
+				A00000010000000000000023 /* TestClock.swift in Sources */,
+				A00000010000000000000028 /* UserNotificationCenterSpy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000700000000000000003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000010000000000000031 /* AddItemUITests.swift in Sources */,
+				A00000010000000000000033 /* ArchiveUITests.swift in Sources */,
+				A00000010000000000000032 /* EditItemUITests.swift in Sources */,
+				A00000010000000000000030 /* GermanLocalizationUITests.swift in Sources */,
+				A00000010000000000000034 /* SettingsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A00000A00000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A00000400000000000000001 /* ExpiryCue */;
+			targetProxy = A00000200000000000000001 /* PBXContainerItemProxy */;
+		};
+		A00000A00000000000000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A00000400000000000000001 /* ExpiryCue */;
+			targetProxy = A00000200000000000000002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A00000120000000000000001 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A00000120000000000000002 /* en */,
+				A00000120000000000000003 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A00000B00000000000000000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A00000B00000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		A00000B00000000000000010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MQGW45QR4;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ExpiryCue/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.gitzoz.expirycue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A00000B00000000000000011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MQGW45QR4;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ExpiryCue/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.gitzoz.expirycue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A00000B00000000000000020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.gitzoz.expirycue.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpiryCue.app/ExpiryCue";
+			};
+			name = Debug;
+		};
+		A00000B00000000000000021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.gitzoz.expirycue.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpiryCue.app/ExpiryCue";
+			};
+			name = Release;
+		};
+		A00000B00000000000000030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.gitzoz.expirycue.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ExpiryCue;
+			};
+			name = Debug;
+		};
+		A00000B00000000000000031 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.gitzoz.expirycue.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ExpiryCue;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00000800000000000000000 /* Build configuration list for PBXProject "ExpiryCue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000B00000000000000000 /* Debug */,
+				A00000B00000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000800000000000000001 /* Build configuration list for PBXNativeTarget "ExpiryCue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000B00000000000000010 /* Debug */,
+				A00000B00000000000000011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000800000000000000002 /* Build configuration list for PBXNativeTarget "ExpiryCueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000B00000000000000020 /* Debug */,
+				A00000B00000000000000021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000800000000000000003 /* Build configuration list for PBXNativeTarget "ExpiryCueUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000B00000000000000030 /* Debug */,
+				A00000B00000000000000031 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00000300000000000000001 /* Project object */;
+}

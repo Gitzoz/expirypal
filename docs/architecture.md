@@ -1,6 +1,6 @@
 # Architecture
 
-ExpiryPal uses MVVM + Repository + Services.
+ExpiryCue uses MVVM + Repository + Services.
 
 Dependency flow:
 Views -> ViewModels -> Repositories/Services/Clock -> SwiftData Models
@@ -23,7 +23,7 @@ Rules:
 - `ArchiveViewModel` reads non-active items from the repository.
 - `SettingsViewModel` loads and saves notification preferences through the settings repository.
 - `NotificationSchedulingService` wraps `UserNotifications` and is invoked by ViewModels after item or settings changes.
-- `ExpiryPalApp` builds the composition root and injects repositories, services, and `Clock` through `AppContainer`.
+- `ExpiryCueApp` builds the composition root and injects repositories, services, and `Clock` through `AppContainer`.
 - `AppContainer` is responsible for deterministic SwiftData bootstrap, including the persistent store location and safe fallback behavior for release-stability fixes.
 
 ## Visual System Boundary

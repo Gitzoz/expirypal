@@ -2,10 +2,10 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-PROJECT_PATH="$ROOT_DIR/ExpiryPal.xcodeproj"
-DERIVED_DATA_PATH="${DERIVED_DATA_PATH:-/tmp/expirypal-screenshot-deriveddata}"
-APP_PATH="$DERIVED_DATA_PATH/Build/Products/Debug-iphonesimulator/ExpiryPal.app"
-APP_BUNDLE_ID="com.expirypal.app"
+PROJECT_PATH="$ROOT_DIR/ExpiryCue.xcodeproj"
+DERIVED_DATA_PATH="${DERIVED_DATA_PATH:-/tmp/expirycue-screenshot-deriveddata}"
+APP_PATH="$DERIVED_DATA_PATH/Build/Products/Debug-iphonesimulator/ExpiryCue.app"
+APP_BUNDLE_ID="de.gitzoz.expirycue"
 
 SCENES=(dashboard addItem editItem archive settings)
 GERMAN_SCENES=(dashboard addItem editItem archive settings)
@@ -75,7 +75,7 @@ build_app() {
 
   xcodebuild \
     -project "$PROJECT_PATH" \
-    -scheme ExpiryPal \
+    -scheme ExpiryCue \
     -derivedDataPath "$DERIVED_DATA_PATH" \
     -destination "id=$build_device_id" \
     build >/dev/null

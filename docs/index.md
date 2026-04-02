@@ -1,4 +1,4 @@
-# ExpiryPal Documentation Index
+# ExpiryCue Documentation Index
 
 This repository contains both the authoritative markdown documentation and a public GitHub Pages site.
 

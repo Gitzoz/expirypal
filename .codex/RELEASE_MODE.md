@@ -1,5 +1,5 @@
 # .codex/RELEASE_MODE.md
-# ExpiryPal Release Mode
+# ExpiryCue Release Mode
 Status: Mandatory For Release, Audit, Stability, TestFlight, And App Store Work
 
 Release mode is a stricter operating mode.
@@ -33,7 +33,7 @@ Only these categories are allowed:
 
 Before making release-mode changes, read:
 - `AGENTS.md`
-- `docs/spec/ExpiryPalSpec.md`
+- `docs/spec/ExpiryCueSpec.md`
 - `.codex/WORKFLOW.md`
 - `.codex/REVIEW_CHECKLIST.md`
 - `docs/testing.md`

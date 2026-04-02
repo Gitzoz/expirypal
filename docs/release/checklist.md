@@ -1,7 +1,7 @@
 # Release Checklist
 
 ## Product
-- [ ] v1 scope matches `docs/spec/ExpiryPalSpec.md`
+- [ ] v1 scope matches `docs/spec/ExpiryCueSpec.md`
 - [ ] No forbidden non-goal features are included
 - [ ] English and German localization parity is maintained
 

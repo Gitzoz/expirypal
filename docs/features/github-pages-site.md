@@ -1,7 +1,7 @@
 # GitHub Pages Site
 
 ## Goal
-Provide a public GitHub Pages site that explains the ExpiryPal product, links to the repository documentation, and presents the privacy-first positioning clearly.
+Provide a public GitHub Pages site that explains the ExpiryCue product, links to the repository documentation, and presents the privacy-first positioning clearly.
 
 ## Non-goals
 - Hosting any backend or interactive service
@@ -10,7 +10,7 @@ Provide a public GitHub Pages site that explains the ExpiryPal product, links to
 - Expanding app scope beyond the v1 specification
 
 ## User behavior
-- Visitors can understand the purpose of ExpiryPal from a single landing page.
+- Visitors can understand the purpose of ExpiryCue from a single landing page.
 - Visitors can navigate to architecture, data model, notifications, testing, roadmap, changelog, and feature docs.
 - Visitors can read a public summary of privacy and licensing constraints.
 - Visitors can reach the GitHub repository directly from the site.

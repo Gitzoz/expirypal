@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "Running ExpiryPal tests..."
+echo "Running ExpiryCue tests..."
 
 find_latest_device_id() {
   local device_name="$1"
@@ -38,9 +38,9 @@ xcrun simctl boot "$SIMULATOR_DEVICE_ID" >/dev/null 2>&1 || true
 xcrun simctl bootstatus "$SIMULATOR_DEVICE_ID" -b >/dev/null
 
 xcodebuild \
-  -project ExpiryPal.xcodeproj \
-  -scheme ExpiryPal \
-  -derivedDataPath /tmp/expirypal-deriveddata \
+  -project ExpiryCue.xcodeproj \
+  -scheme ExpiryCue \
+  -derivedDataPath /tmp/expirycue-deriveddata \
   -destination "id=$SIMULATOR_DEVICE_ID" \
   -parallel-testing-enabled NO \
   test

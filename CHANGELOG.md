@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- Rebranded the app, repository-facing docs, project, targets, bundle identifiers, screenshots, and public site from ExpiryPal to ExpiryCue.
+- Added a branded static launch screen using the app logo on the app's warm sand background so first launch matches the product visual system.
+- Strengthened navigation-bar title styling across all screens so headings remain clearly legible in normal app use, not only in screenshot mode.
 - Finalized App Store metadata URLs, added a copy-paste App Store Connect checklist, and upgraded the public Pages site with canonical, social preview, robots, and sitemap metadata.
 - Slimmed the repository constitution, rewrote the Codex workflow around an explicit 5-role operating model, and added dedicated review and release-mode playbooks for stricter process enforcement.
 - Hardened SwiftData bootstrap and model safety for release preparation by using an explicit persistent-store location, safer model normalization, and a Release-safe item lookup path.

@@ -49,16 +49,16 @@ Submission directories:
 - Make the app purpose understandable at first glance: food + date tracking
 - Avoid text in the icon
 - Ensure the icon does not depend on gradients so subtle they disappear at small scale
-- Respect the proprietary branding rule for the ExpiryPal name and assets
+- Respect the proprietary branding rule for the ExpiryCue name and assets
 
 ## Visual Direction
 - Use the existing app icon as the brand anchor for release assets.
-- Prefer the shared ExpiryPal palette:
+- Prefer the shared ExpiryCue palette:
   - evergreen for structure
   - warm sand for backgrounds and surfaces
   - amber for emphasis only
 - Screenshots, site graphics, and any release visuals should feel like one product family rather than separate one-off treatments.
 
 Current repo assets:
-- App icon catalog target: `ExpiryPal/Assets.xcassets/AppIcon.appiconset/`
+- App icon catalog target: `ExpiryCue/Assets.xcassets/AppIcon.appiconset/`
 - Icon source files: `docs/release/icon-source/`

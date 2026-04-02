@@ -1,7 +1,7 @@
 # ADR-0001: GitHub Pages Public Docs
 
 ## Context
-ExpiryPal needs a public-facing landing page and documentation entrypoint that can be hosted directly from the repository without introducing product runtime dependencies or violating privacy constraints.
+ExpiryCue needs a public-facing landing page and documentation entrypoint that can be hosted directly from the repository without introducing product runtime dependencies or violating privacy constraints.
 
 ## Decision
 Use a static HTML/CSS site in `docs/site/` and deploy it through GitHub Pages via GitHub Actions.

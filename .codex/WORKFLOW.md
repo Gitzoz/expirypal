@@ -1,9 +1,9 @@
 # .codex/WORKFLOW.md
-# ExpiryPal Execution Workflow
+# ExpiryCue Execution Workflow
 Status: Authoritative
 Scope: All agents and contributors working in this repository
 
-This file defines how work is executed in ExpiryPal.
+This file defines how work is executed in ExpiryCue.
 If workflow conflicts with `AGENTS.md` or the specification, the higher-authority document wins.
 
 ---
@@ -83,7 +83,7 @@ Default mode:
 
 ### 4.1 Spec Guardian
 Responsibility:
-- enforce `AGENTS.md` and `docs/spec/ExpiryPalSpec.md`
+- enforce `AGENTS.md` and `docs/spec/ExpiryCueSpec.md`
 - block scope drift
 - state what is in scope and what is explicitly untouched
 
@@ -173,9 +173,9 @@ Use separate worktrees when:
 - interfaces are already understood
 
 Recommended worktree ownership:
-- iOS Engineer: `ExpiryPal/App`, `ExpiryPal/ViewModels`, `ExpiryPal/Views`
-- Architect or implementation support: `ExpiryPal/Data`, `ExpiryPal/Models`, `ExpiryPal/Services`
-- QA Engineer: `ExpiryPalTests`, `ExpiryPalUITests`, validation scripts
+- iOS Engineer: `ExpiryCue/App`, `ExpiryCue/ViewModels`, `ExpiryCue/Views`
+- Architect or implementation support: `ExpiryCue/Data`, `ExpiryCue/Models`, `ExpiryCue/Services`
+- QA Engineer: `ExpiryCueTests`, `ExpiryCueUITests`, validation scripts
 - Reviewer / Release Engineer: release docs, changelog, release assets, final validation notes
 
 ---

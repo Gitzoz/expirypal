@@ -1,8 +1,8 @@
 # .codex/REVIEW_CHECKLIST.md
-# ExpiryPal Reviewer Checklist
+# ExpiryCue Reviewer Checklist
 Status: Mandatory For Review Work
 
-This file defines the default review posture for ExpiryPal.
+This file defines the default review posture for ExpiryCue.
 The reviewer is a blocker, not a summarizer.
 
 ---
@@ -20,7 +20,7 @@ Do not lead with reassurance.
 ## 2. Blocking Findings
 
 Block the change if any of the following is true:
-- scope exceeds `AGENTS.md` or `docs/spec/ExpiryPalSpec.md`
+- scope exceeds `AGENTS.md` or `docs/spec/ExpiryCueSpec.md`
 - architecture violates `.codex/ARCHITECTURE_GUARDS.md`
 - docs were not updated before behavior changed
 - tests are missing or too weak for the changed logic

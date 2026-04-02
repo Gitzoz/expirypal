@@ -134,7 +134,7 @@ for deviceClass in ["6.1-inch", "6.7-inch"] {
         }
 
         let eyebrow = attributed(
-            "ExpiryPal",
+            "ExpiryCue",
             font: .systemFont(ofSize: canvasRect.width * 0.026, weight: .semibold),
             color: amber
         )

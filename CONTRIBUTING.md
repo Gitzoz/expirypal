@@ -2,7 +2,7 @@
 
 All contributions must comply with:
 - AGENTS.md
-- docs/spec/ExpiryPalSpec.md
+- docs/spec/ExpiryCueSpec.md
 - .codex/WORKFLOW.md
 - .codex/ARCHITECTURE_GUARDS.md
 

@@ -2,11 +2,11 @@
 
 ## App Privacy Summary
 
-ExpiryPal is a local-only iOS application.
+ExpiryCue is a local-only iOS application.
 
 Food item data and notification preferences are stored on device with SwiftData. The app does not create accounts, does not transmit data to a backend, and does not depend on third-party SDKs or remote services.
 
-ExpiryPal does not use:
+ExpiryCue does not use:
 - tracking
 - analytics
 - advertising
@@ -22,7 +22,7 @@ The app bundle includes a privacy manifest that declares:
 
 ## Data Stored On Device
 
-ExpiryPal stores the following data locally:
+ExpiryCue stores the following data locally:
 - food item names
 - expiry dates
 - storage locations
@@ -34,7 +34,7 @@ ExpiryPal stores the following data locally:
 
 ## Notifications
 
-ExpiryPal uses local notifications only.
+ExpiryCue uses local notifications only.
 
 Notification scheduling is performed on device through Apple system APIs. Notification content is generated locally from the stored food item data and the user's local notification settings.
 
@@ -58,6 +58,6 @@ If the GitHub Pages site is published, it must remain:
 ## Source of Truth
 
 This document must stay aligned with the actual implementation in:
-- `ExpiryPal/`
+- `ExpiryCue/`
 - `docs/notifications.md`
 - `docs/architecture.md`

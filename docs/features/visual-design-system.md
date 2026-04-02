@@ -1,7 +1,7 @@
 # Visual Design System
 
 ## Goal
-Define a consistent visual language for the ExpiryPal app, public GitHub Pages site, and release assets using the existing app icon as the brand anchor.
+Define a consistent visual language for the ExpiryCue app, public GitHub Pages site, and release assets using the existing app icon as the brand anchor.
 
 ## Non-goals
 - Changing product scope or adding new screens
@@ -20,6 +20,10 @@ Define a consistent visual language for the ExpiryPal app, public GitHub Pages s
   - restrained amber accents
 - The icon itself should stay reduced and geometric so it reads at small App Store and Home Screen sizes.
 - The icon concept should be literal enough to communicate food + date tracking on first glance, not only brand mood.
+- The launch screen should be static and minimal:
+  - warm sand background from the app palette
+  - centered app logo from the repository icon source
+  - no loading text, animation, or extra marketing copy
 - SwiftUI screens use the same rounded-card and soft-background treatment across list and form flows.
 - The public Pages site uses the same palette, rounded geometry, and icon-based branding anchor.
 - Styling remains inside the View layer; ViewModels, Repositories, and Services are unchanged.

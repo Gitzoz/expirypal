@@ -1,6 +1,6 @@
 # AGENTS.md
 
-ExpiryPal Repository Constitution
+ExpiryCue Repository Constitution
 
 This file defines the non-negotiable operating rules for any agent working in this repository.
 If any instruction conflicts with this file, this file wins.
@@ -14,7 +14,7 @@ Agents must refuse requests that violate scope and cite the relevant section.
 Use this precedence order.
 
 1. `AGENTS.md`
-2. `docs/spec/ExpiryPalSpec.md`
+2. `docs/spec/ExpiryCueSpec.md`
 3. `docs/decisions/` ADRs
 4. `.codex/ARCHITECTURE_GUARDS.md`
 5. `.codex/WORKFLOW.md`
@@ -33,7 +33,7 @@ If documentation conflicts with code, update documentation first, then update co
 
 # 2. Product Definition
 
-ExpiryPal is a minimalist, privacy-first iOS app that helps users reduce food waste by tracking food expiry dates and sending local notifications.
+ExpiryCue is a minimalist, privacy-first iOS app that helps users reduce food waste by tracking food expiry dates and sending local notifications.
 
 The product must remain:
 - offline-first
@@ -47,7 +47,7 @@ The product must remain:
 - open source for code only (MIT)
 - internationalized in English and German only
 
-Detailed product behavior lives in `docs/spec/ExpiryPalSpec.md`.
+Detailed product behavior lives in `docs/spec/ExpiryCueSpec.md`.
 
 ---
 
@@ -63,7 +63,7 @@ Only these Apple frameworks may be used unless an ADR explicitly approves otherw
 
 # 4. Scope Lock
 
-The v1 scope is defined by `docs/spec/ExpiryPalSpec.md`.
+The v1 scope is defined by `docs/spec/ExpiryCueSpec.md`.
 
 Allowed screens:
 - Dashboard
@@ -111,7 +111,7 @@ If a request implies any of these:
 
 For all tasks:
 - `AGENTS.md`
-- relevant sections of `docs/spec/ExpiryPalSpec.md`
+- relevant sections of `docs/spec/ExpiryCueSpec.md`
 
 For code changes:
 - `.codex/WORKFLOW.md`
@@ -129,7 +129,7 @@ For review work:
 
 # 7. Architecture Summary
 
-ExpiryPal uses:
+ExpiryCue uses:
 - MVVM + Repository + Services
 
 Structural enforcement lives in `.codex/ARCHITECTURE_GUARDS.md`.
@@ -155,7 +155,7 @@ Detailed localization rules stay in the spec.
 
 # 9. Privacy Summary
 
-ExpiryPal must guarantee:
+ExpiryCue must guarantee:
 - data stored locally only
 - local notifications only
 - no tracking

@@ -1,5 +1,5 @@
 # .codex/ARCHITECTURE_GUARDS.md
-# ExpiryPal Architecture Guards
+# ExpiryCue Architecture Guards
 Status: Mandatory Enforcement
 
 This file defines non-negotiable architectural constraints.
@@ -181,8 +181,8 @@ Hard rules:
 - Missing keys are not allowed.
 
 Required paths:
-- ExpiryPal/Resources/en.lproj/Localizable.strings
-- ExpiryPal/Resources/de.lproj/Localizable.strings
+- ExpiryCue/Resources/en.lproj/Localizable.strings
+- ExpiryCue/Resources/de.lproj/Localizable.strings
 
 Must localize:
 - Buttons, titles, labels, errors, empty states, alerts

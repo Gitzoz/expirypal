@@ -1,7 +1,7 @@
 # App Store Copy
 
 ## App Name
-ExpiryPal
+ExpiryCue
 
 ## Subtitle
 Food Expiry Tracker
@@ -10,19 +10,19 @@ Food Expiry Tracker
 Track expiry dates, reduce food waste, and get local reminders. No account, no ads, no tracking.
 
 ## Short Description
-ExpiryPal helps you track food expiry dates with a focused dashboard, simple item editing, archive support, and local notifications.
+ExpiryCue helps you track food expiry dates with a focused dashboard, simple item editing, archive support, and local notifications.
 
 ## Full Description
-ExpiryPal is a minimalist iOS app for reducing food waste without giving up your privacy.
+ExpiryCue is a minimalist iOS app for reducing food waste without giving up your privacy.
 
-Use ExpiryPal to:
+Use ExpiryCue to:
 - add food items with an expiry date and storage location
 - see what expires today, in the next 3 days, or later
 - edit items as plans change
 - archive consumed or discarded items
 - control local reminder timing in Settings
 
-ExpiryPal is intentionally small:
+ExpiryCue is intentionally small:
 - no accounts
 - no analytics
 - no ads
@@ -32,7 +32,7 @@ ExpiryPal is intentionally small:
 
 Your data stays on your device. Notifications are scheduled locally.
 
-ExpiryPal is a one-time purchase:
+ExpiryCue is a one-time purchase:
 - no subscription
 - no upsells
 - no locked premium tier
@@ -42,10 +42,10 @@ ExpiryPal is a one-time purchase:
 food expiry, food waste, expiry tracker, kitchen tracker, food reminder, pantry, fridge, freezer
 
 ## Support URL
-https://github.com/Gitzoz/expirypal
+https://github.com/Gitzoz/expirycue
 
 ## Marketing URL
-https://gitzoz.github.io/expirypal/
+https://gitzoz.github.io/expirycue/
 
 ## Privacy Policy URL
-https://gitzoz.github.io/expirypal/privacy.html
+https://gitzoz.github.io/expirycue/privacy.html

@@ -4,11 +4,11 @@ Use this file as the copy-paste source when the Apple Developer account is fully
 
 ## App Record
 
-- Name: `ExpiryPal`
+- Name: `ExpiryCue`
 - Platform: `iOS`
 - Primary language: `English (U.S.)` or your preferred English locale
 - Bundle ID: match Xcode exactly
-- SKU: `expirypal-ios-1`
+- SKU: `expirycue-ios-1`
 
 ## App Information
 
@@ -19,9 +19,9 @@ Use this file as the copy-paste source when the Apple Developer account is fully
 
 ## URLs
 
-- Support URL: `https://github.com/Gitzoz/expirypal`
-- Marketing URL: `https://gitzoz.github.io/expirypal/`
-- Privacy Policy URL: `https://gitzoz.github.io/expirypal/privacy.html`
+- Support URL: `https://github.com/Gitzoz/expirycue`
+- Marketing URL: `https://gitzoz.github.io/expirycue/`
+- Privacy Policy URL: `https://gitzoz.github.io/expirycue/privacy.html`
 
 ## Promotional Text
 
@@ -29,16 +29,16 @@ Use this file as the copy-paste source when the Apple Developer account is fully
 
 ## Description
 
-`ExpiryPal is a minimalist iOS app for reducing food waste without giving up your privacy.
+`ExpiryCue is a minimalist iOS app for reducing food waste without giving up your privacy.
 
-Use ExpiryPal to:
+Use ExpiryCue to:
 - add food items with an expiry date and storage location
 - see what expires today, in the next 3 days, or later
 - edit items as plans change
 - archive consumed or discarded items
 - control local reminder timing in Settings
 
-ExpiryPal is intentionally small:
+ExpiryCue is intentionally small:
 - no accounts
 - no analytics
 - no ads
@@ -48,7 +48,7 @@ ExpiryPal is intentionally small:
 
 Your data stays on your device. Notifications are scheduled locally.
 
-ExpiryPal is a one-time purchase:
+ExpiryCue is a one-time purchase:
 - no subscription
 - no upsells
 - no locked premium tier
@@ -91,7 +91,7 @@ Expected answers based on the current implementation:
 
 Cross-check against:
 - `PRIVACY.md`
-- `ExpiryPal/Resources/PrivacyInfo.xcprivacy`
+- `ExpiryCue/Resources/PrivacyInfo.xcprivacy`
 
 ## Build Metadata
 

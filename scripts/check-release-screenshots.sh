@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-DERIVED_DATA_PATH="${DERIVED_DATA_PATH:-/tmp/expirypal-screenshot-deriveddata}"
+DERIVED_DATA_PATH="${DERIVED_DATA_PATH:-/tmp/expirycue-screenshot-deriveddata}"
 SCREENSHOT_DIR="$ROOT_DIR/release-assets/screenshots"
 COMPOSED_DIR="$ROOT_DIR/release-assets/store-composed"
 SUBMISSION_DIR="$ROOT_DIR/release-assets/store-submission"
@@ -119,11 +119,11 @@ required_submission_files=(
 
 echo "Running screenshot-scene quality tests..."
 xcodebuild \
-  -project "$ROOT_DIR/ExpiryPal.xcodeproj" \
-  -scheme ExpiryPal \
+  -project "$ROOT_DIR/ExpiryCue.xcodeproj" \
+  -scheme ExpiryCue \
   -derivedDataPath "$DERIVED_DATA_PATH" \
   -destination "$DESTINATION" \
-  -only-testing:ExpiryPalUITests/GermanLocalizationUITests \
+  -only-testing:ExpiryCueUITests/GermanLocalizationUITests \
   test >/dev/null
 
 echo "Clearing previous screenshot export..."
